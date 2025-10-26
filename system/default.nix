@@ -18,6 +18,7 @@
 
   environment.systemPackages = with pkgs; [
     brightnessctl
+    btop
     git
     helix
     htop
