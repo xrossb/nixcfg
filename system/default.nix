@@ -35,4 +35,8 @@
       "image/*" = [ "org.gnome.Loupe.desktop" ];
     };
   };
+
+  security.pam.services.login.enableGnomeKeyring = true;
+  services.gnome.gnome-keyring.enable = true;
+  security.polkit.enable = true;
 }
