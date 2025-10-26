@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   networking.networkmanager.enable = true;
@@ -8,6 +8,10 @@
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
+    extraPackages = with pkgs; [
+      vaapiIntel
+      intel-media-driver
+    ];
   };
 
   services.printing.enable = true;

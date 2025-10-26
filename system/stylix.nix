@@ -9,7 +9,7 @@
 
     cursor = {
       name = "Adwaita";
-      size = 16;
+      size = 24;
       package = pkgs.adwaita-icon-theme;
     };
 

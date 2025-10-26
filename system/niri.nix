@@ -1,7 +1,12 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 
 {
-  programs.niri.enable = true;
+  nixpkgs.overlays = [ inputs.niri.overlays.niri ];
+
+  programs.niri = {
+    enable = true;
+    package = pkgs.niri-stable;
+  };
 
   services.greetd = {
     enable = true;
@@ -28,4 +33,7 @@
     XDG_CURRENT_DESKTOP = "niri";
     ELECTRON_OZONE_PLATFORM_HINT = "auto";
   };
+
+  programs.xwayland.enable = true;
+  environment.systemPackages = with pkgs; [ xwayland-satellite ];
 }
