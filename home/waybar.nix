@@ -69,7 +69,6 @@ in
           "󰁹"
         ];
         format-charging = "󰂄 {capacity}%";
-        format-plugged = "󱟢 {capacity}%";
       };
       cpu.format = " {usage}%";
       memory.format = " {used} GiB ({percentage}%)";
