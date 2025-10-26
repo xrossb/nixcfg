@@ -9,7 +9,6 @@
     ./polkit.nix
     ./shell.nix
     ./swaybg.nix
-    ./swayidle.nix
     ./swaylock.nix
     ./swayosd.nix
     ./waybar.nix
