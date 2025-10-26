@@ -38,5 +38,6 @@
     XDG_SESSION_TYPE = "wayland";
     XDG_SESSION_DESKTOP = "niri";
     XDG_CURRENT_DESKTOP = "niri";
+    ELECTRON_OZONE_PLATFORM_HINT = "auto";
   };
 }
