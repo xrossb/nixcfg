@@ -30,11 +30,11 @@ in
         "network"
         "bluetooth"
         "battery"
-        "cpu"
-        "memory"
-        "disk"
       ];
-      clock.format = "{:%a · %d %b · %I:%M %p}";
+      clock = {
+        format = "{:%a · %d %b · %I:%M %p}";
+        "tooltip-format" = "<tt><small>{calendar}</small></tt>";
+      };
       tray = {
         spacing = 16;
         reverse-direction = true;
@@ -68,13 +68,8 @@ in
           "󰂂"
           "󰁹"
         ];
-        format-charging = "󰂄 {capacity}%";
-      };
-      cpu.format = " {usage}%";
-      memory.format = " {used} GiB ({percentage}%)";
-      disk = {
-        format = " {specific_free:.2f} GB ({percentage_free}% free)";
-        unit = "GB";
+        format-charging = " {capacity}%";
+        format-full = " {capacity}%";
       };
     };
 
