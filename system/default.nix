@@ -40,4 +40,9 @@
   security.pam.services.login.enableGnomeKeyring = true;
   services.gnome.gnome-keyring.enable = true;
   security.polkit.enable = true;
+
+  services.tlp.enable = true;
+  services.thermald.enable = true;
+  services.upower.enable = true;
+  powerManagement.powertop.enable = true;
 }
