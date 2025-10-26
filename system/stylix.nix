@@ -5,7 +5,7 @@
     enable = true;
     polarity = "dark";
     base16Scheme = "${pkgs.base16-schemes}/share/themes/ayu-dark.yaml";
-    image = ../wallpaper/forest.jpg;
+    image = ../wallpaper/glow.png;
 
     cursor = {
       name = "Adwaita";
