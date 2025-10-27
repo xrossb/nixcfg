@@ -1,5 +1,11 @@
-{pkgs, ...}: {
+{
+  inputs,
+  pkgs,
+  ...
+}: {
   imports = [
+    inputs.nixos-hardware.nixosModules.dell-xps-13-9350
+
     ./hardware-configuration.nix
   ];
 

@@ -11,6 +11,7 @@
 
     niri.url = "github:sodiboo/niri-flake";
     nix-flatpak.url = "github:gmodena/nix-flatpak?ref=latest";
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     stylix.url = "github:nix-community/stylix";
   };
 
