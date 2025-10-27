@@ -95,6 +95,7 @@ in
             title = "^notificationtoasts_\\d+_desktop$";
           }
         ];
+        open-focused = false;
         default-floating-position = {
           x = 0;
           y = 0;
