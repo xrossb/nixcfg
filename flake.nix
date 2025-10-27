@@ -14,29 +14,42 @@
     stylix.url = "github:nix-community/stylix";
   };
 
-  outputs =
-    { nixpkgs, ... }@inputs:
-    {
-      formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-tree;
+  outputs = {
+    nixpkgs,
+    systems,
+    ...
+  } @ inputs: let
+    lib = nixpkgs.lib;
+    forEachSystem = f: lib.genAttrs (import systems) (system: f pkgsFor.${system});
+    pkgsFor = lib.genAttrs (import systems) (
+      system:
+        import nixpkgs {
+          inherit system;
+          config.allowUnfree = true;
+        }
+    );
+  in {
+    formatter = forEachSystem (pkgs: pkgs.alejandra);
 
-      nixosConfigurations = {
-        nixps = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; };
-          modules = [
-            inputs.home-manager.nixosModules.home-manager
-            inputs.niri.nixosModules.niri
-            inputs.nix-flatpak.nixosModules.nix-flatpak
-            inputs.stylix.nixosModules.stylix
-            ./host/nixps
-            ./system
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.backupFileExtension = "bak";
-              home-manager.users.eallen = import ./home;
-            }
-          ];
-        };
+    nixosConfigurations = {
+      nixps = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = {inherit inputs;};
+        modules = [
+          inputs.home-manager.nixosModules.home-manager
+          inputs.niri.nixosModules.niri
+          inputs.nix-flatpak.nixosModules.nix-flatpak
+          inputs.stylix.nixosModules.stylix
+          ./host/nixps
+          ./system
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.backupFileExtension = "bak";
+            home-manager.users.eallen = import ./home;
+          }
+        ];
       };
     };
+  };
 }

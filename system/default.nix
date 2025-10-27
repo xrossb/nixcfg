@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   imports = [
     ./firefox.nix
     ./flatpak.nix
@@ -32,8 +30,8 @@
   xdg.mime = {
     enable = true;
     defaultApplications = {
-      "text/*" = [ "code.desktop" ];
-      "image/*" = [ "org.gnome.Loupe.desktop" ];
+      "text/*" = ["code.desktop"];
+      "image/*" = ["org.gnome.Loupe.desktop"];
     };
   };
 

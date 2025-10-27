@@ -1,6 +1,4 @@
-{ ... }:
-
-{
+{...}: {
   users.users.eallen = {
     isNormalUser = true;
     description = "Eddie";

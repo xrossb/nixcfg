@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   fonts.enableDefaultPackages = true;
   fonts.packages = with pkgs; [
     adwaita-fonts

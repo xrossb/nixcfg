@@ -1,8 +1,6 @@
-{ config, ... }:
-let
+{config, ...}: let
   colors = config.lib.stylix.colors.withHashtag;
-in
-{
+in {
   stylix.targets.niri.enable = false;
   programs.niri.settings = {
     outputs."Sharp Corporation 0x1449 Unknown".scale = 1.0;
@@ -30,17 +28,17 @@ in
       always-center-single-column = true;
 
       preset-column-widths = [
-        { proportion = 0.33333; }
-        { proportion = 0.5; }
-        { proportion = 0.66667; }
+        {proportion = 0.33333;}
+        {proportion = 0.5;}
+        {proportion = 0.66667;}
       ];
 
       default-column-width.proportion = 0.5;
 
       preset-window-heights = [
-        { proportion = 0.33333; }
-        { proportion = 0.5; }
-        { proportion = 0.66667; }
+        {proportion = 0.33333;}
+        {proportion = 0.5;}
+        {proportion = 0.66667;}
       ];
 
       focus-ring = {
@@ -65,18 +63,18 @@ in
 
     layer-rules = [
       {
-        matches = [ { namespace = "^launcher$"; } ];
+        matches = [{namespace = "^launcher$";}];
         shadow.enable = true;
       }
       {
-        matches = [ { namespace = "^wallpaper$"; } ];
+        matches = [{namespace = "^wallpaper$";}];
         place-within-backdrop = true;
       }
     ];
 
     window-rules = [
       {
-        matches = [ { app-id = "firefox$"; } ];
+        matches = [{app-id = "firefox$";}];
         clip-to-geometry = true;
       }
       {
@@ -103,7 +101,7 @@ in
         };
       }
       {
-        matches = [ { is-floating = true; } ];
+        matches = [{is-floating = true;}];
         shadow.enable = true;
       }
     ];
@@ -281,9 +279,9 @@ in
 
       "Mod+W".action = toggle-column-tabbed-display;
 
-      "Print".action.screenshot = [ ];
-      "Ctrl+Print".action.screenshot-screen = [ ];
-      "Alt+Print".action.screenshot-window = [ ];
+      "Print".action.screenshot = [];
+      "Ctrl+Print".action.screenshot-screen = [];
+      "Alt+Print".action.screenshot-window = [];
 
       "Mod+Escape" = {
         allow-inhibiting = false;

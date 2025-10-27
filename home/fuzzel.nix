@@ -1,8 +1,6 @@
-{ config, ... }:
-let
+{config, ...}: let
   colors = config.lib.stylix.colors;
-in
-{
+in {
   stylix.targets.fuzzel.enable = false;
   programs.fuzzel = {
     enable = true;

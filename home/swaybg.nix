@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   home.packages = with pkgs; [
     swaybg
   ];
@@ -14,16 +12,16 @@
   systemd.user.services.swaybg = {
     Unit = {
       Description = "swaybg draws the desktop background.";
-      After = [ "graphical-session.target" ];
-      PartOf = [ "graphical-session.target" ];
-      Requisite = [ "graphical-session.target" ];
+      After = ["graphical-session.target"];
+      PartOf = ["graphical-session.target"];
+      Requisite = ["graphical-session.target"];
     };
     Service = {
       ExecStart = "${pkgs.swaybg}/bin/swaybg --image %h/Pictures/Wallpapers/glow.png";
       Restart = "on-failure";
     };
     Install = {
-      WantedBy = [ "graphical-session.target" ];
+      WantedBy = ["graphical-session.target"];
     };
   };
 }

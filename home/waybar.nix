@@ -1,15 +1,15 @@
-{ config, lib, ... }:
-let
-  colors = config.lib.stylix.colors;
-  rgb =
-    color:
-    (lib.concatStringsSep ", " [
-      (lib.strings.floatToString ((builtins.fromJSON colors."${color}-dec-r") * 255.0))
-      (lib.strings.floatToString ((builtins.fromJSON colors."${color}-dec-g") * 255.0))
-      (lib.strings.floatToString ((builtins.fromJSON colors."${color}-dec-b") * 255.0))
-    ]);
-in
 {
+  config,
+  lib,
+  ...
+}: let
+  colors = config.lib.stylix.colors;
+  rgb = color: (lib.concatStringsSep ", " [
+    (lib.strings.floatToString ((builtins.fromJSON colors."${color}-dec-r") * 255.0))
+    (lib.strings.floatToString ((builtins.fromJSON colors."${color}-dec-g") * 255.0))
+    (lib.strings.floatToString ((builtins.fromJSON colors."${color}-dec-b") * 255.0))
+  ]);
+in {
   stylix.targets.waybar.enable = false;
   programs.waybar = {
     enable = true;

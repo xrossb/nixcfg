@@ -1,6 +1,4 @@
-{ lib, ... }:
-
-{
+{lib, ...}: {
   programs.bash = {
     enable = true;
     enableCompletion = true;
