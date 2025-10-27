@@ -52,7 +52,7 @@ in {
         format-on = "󰂯";
         format-connected = "󰂯 {device_alias}";
       };
-      battery = {
+      battery = rec {
         format = "{icon} {capacity}%";
         tooltip-format = "{timeTo}";
         format-icons = [
@@ -68,8 +68,9 @@ in {
           "󰂂"
           "󰁹"
         ];
+        format-plugged = " {capacity}%";
         format-charging = " {capacity}%";
-        format-full = " {capacity}%";
+        format-full = format-plugged;
       };
     };
 
