@@ -41,14 +41,14 @@ in {
       network = {
         format-ethernet = " {ifname}";
         format-wifi = " {essid}";
-        format-linked = "";
-        format-disconnected = "";
+        format-linked = " linked";
+        format-disconnected = " disconnected";
         format-disabled = "";
       };
       bluetooth = {
         format-disabled = "";
-        format-off = "󰂲";
-        format-on = "󰂯";
+        format-off = "󰂲 off";
+        format-on = "󰂯 on";
         format-connected = "󰂯 {device_alias}";
       };
       battery = rec {
