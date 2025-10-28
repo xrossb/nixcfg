@@ -8,10 +8,12 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    niri.url = "github:sodiboo/niri-flake";
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nix-flatpak.url = "github:gmodena/nix-flatpak?ref=latest";
-    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    nixos-hardware.url = "github:NixOS/nixos-hardware";
     stylix.url = "github:nix-community/stylix";
   };
 
@@ -36,20 +38,7 @@
       nixps = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {inherit inputs;};
-        modules = [
-          inputs.home-manager.nixosModules.home-manager
-          inputs.niri.nixosModules.niri
-          inputs.nix-flatpak.nixosModules.nix-flatpak
-          inputs.stylix.nixosModules.stylix
-          ./host/nixps
-          ./system
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.backupFileExtension = "bak";
-            home-manager.users.eallen = import ./home;
-          }
-        ];
+        modules = [./hosts/nixps];
       };
     };
   };
