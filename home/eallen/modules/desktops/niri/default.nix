@@ -88,7 +88,10 @@ in {
         };
       };
 
-      overview.workspace-shadow.enable = false;
+      overview = {
+        backdrop-color = colors.base00;
+        workspace-shadow.enable = false;
+      };
 
       layer-rules = [
         {
