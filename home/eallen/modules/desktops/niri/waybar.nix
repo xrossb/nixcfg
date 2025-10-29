@@ -1,14 +1,11 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }: let
   colors = config.lib.stylix.colors;
-  rgb = color: (lib.concatStringsSep ", " [
-    (lib.strings.floatToString ((builtins.fromJSON colors."${color}-dec-r") * 255.0))
-    (lib.strings.floatToString ((builtins.fromJSON colors."${color}-dec-g") * 255.0))
-    (lib.strings.floatToString ((builtins.fromJSON colors."${color}-dec-b") * 255.0))
-  ]);
+  run-sh = command: "${lib.getExe pkgs.alacritty} -e ${lib.strings.escapeShellArg command}";
 in {
   programs.waybar = {
     enable = true;
@@ -28,32 +25,74 @@ in {
         "tray"
         "network"
         "bluetooth"
+        "wireplumber"
         "battery"
       ];
       clock = {
         format = "{:%a, %d %b · %I:%M %p}";
-        "tooltip-format" = "<tt><small>{calendar}</small></tt>";
+        "tooltip-format" = "<tt>{calendar}</tt>";
       };
       tray = {
         spacing = 16;
         reverse-direction = true;
       };
-      network = {
+      network = rec {
         format-ethernet = " {ifname}";
         format-wifi = " {essid}";
         format-linked = " linked";
         format-disconnected = " disconnected";
         format-disabled = "";
+        tooltip-format-ethernet = lib.concatStringsSep "\n" [
+          "if: {ifname}"
+          "ip: {ipaddr}"
+          "gw: {gwaddr}"
+          "mask: {netmask} ({cidr})"
+          ""
+          "down: {bandwidthDownBits}, up: {bandwidthUpBits}"
+        ];
+        tooltip-format-wifi =
+          tooltip-format-ethernet
+          + "\n"
+          + lib.concatStringsSep "\n" [
+            ""
+            "ssid: {essid}"
+            "freq: {frequency}GHz"
+            "str: {signalStrength}% ({signaldBm}dBm)"
+          ];
+        on-click = run-sh (lib.getExe' pkgs.networkmanager "nmtui");
       };
-      bluetooth = {
+      bluetooth = rec {
         format-disabled = "";
-        format-off = "󰂲 off";
-        format-on = "󰂯 on";
-        format-connected = "󰂯 {device_alias}";
+        format-off = "";
+        format-on = " on";
+        format-connected = " {num_connections} connected";
+        tooltip-format = lib.concatStringsSep "\n" [
+          "name: {controller_alias}"
+          "addr: {controller_address}"
+        ];
+        tooltip-format-connected =
+          tooltip-format
+          + "\n"
+          + lib.concatStringsSep "\n" [
+            ""
+            "{device_enumerate}"
+          ];
+        tooltip-format-enumerate-connected = "{device_alias} {device_address}";
+        tooltip-format-enumerate-connected-battery = "{device_alias} {device_address} ({device_battery_percentage}%)";
+        on-click = run-sh (lib.getExe pkgs.bluetuith);
+      };
+      wireplumber = {
+        format = " {volume}%";
+        format-muted = " {volume}%";
+        format-icons = ["" "" ""];
+        tooltip-format = lib.concatStringsSep "\n" [
+          "sink: {node_name}"
+          "source: {source_desc}"
+        ];
+        on-click = lib.getExe pkgs.pavucontrol;
       };
       battery = rec {
         format = "{icon} {capacity}%";
-        tooltip-format = "{timeTo}";
         format-icons = [
           "󰂎"
           "󰁺"
@@ -70,6 +109,13 @@ in {
         format-plugged = " {capacity}%";
         format-charging = " {capacity}%";
         format-full = format-plugged;
+        format-time = "{H}h {M}m";
+        tooltip-format = lib.concatStringsSep "\n" [
+          "draw: {power:.2f}W"
+          "health: {health}%"
+          ""
+          "{timeTo}"
+        ];
       };
     };
 
@@ -81,7 +127,7 @@ in {
       }
 
       window#waybar {
-        background: linear-gradient(to bottom, rgba(${rgb "base00"}, 0.2), transparent);
+        background: linear-gradient(to bottom, alpha(#${colors.base00}, 0.2), transparent);
         color: #${colors.base06};
         text-shadow: 0 0 2px #${colors.base00};
       }
@@ -113,12 +159,12 @@ in {
       }
 
       #workspaces button.focused, #workspaces button.active {
-        background: rgba(${rgb "base0C"}, 0.5);
+        background: alpha(#${colors.base0C}, 0.5);
         box-shadow: inset 0 -3px #${colors.base0C};
       }
 
       #workspaces button.urgent {
-        background: rgba(${rgb "base09"}, 0.5);
+        background: alpha(#${colors.base09}, 0.5);
         box-shadow: inset 0 -3px #${colors.base09};
       }
     '';
