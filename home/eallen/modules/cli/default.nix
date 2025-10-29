@@ -14,6 +14,7 @@
   };
 
   home.packages = with pkgs; [
+    bluetuith
     brightnessctl
     btop
     htop
