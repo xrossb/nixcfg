@@ -15,7 +15,6 @@ in {
     ./mako.nix
     ./polkit.nix
     ./swaybg.nix
-    # ./swaylock.nix
     ./swayosd.nix
     ./waybar.nix
   ];
