@@ -1,5 +1,6 @@
 {
   config,
+  lib,
   pkgs,
   ...
 }: let
@@ -10,8 +11,8 @@ in {
     package = pkgs.fuzzel.override {svgBackend = "librsvg";};
     settings = {
       main = {
-        terminal = "alacritty -e '{cmd}'";
-        dpi-aware = "no";
+        terminal = "${lib.getExe pkgs.alacritty} -e '{cmd}'";
+        dpi-aware = false;
         font = "monospace:size=12";
         horizontal-pad = 8;
         vertical-pad = 8;
@@ -20,7 +21,6 @@ in {
         minimal-lines = true;
         width = 64;
         match-counter = true;
-        show-actions = true;
       };
 
       border = {
