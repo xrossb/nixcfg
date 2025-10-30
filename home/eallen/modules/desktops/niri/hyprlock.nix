@@ -10,8 +10,11 @@ in {
       };
 
       animations = {
-        enabled = true;
-        animation = ["fade, 1, 2, default"];
+        animation = [
+          "fadeIn, 1, 10, default"
+          "fadeOut, 1, 2, default"
+          "inputField, 0"
+        ];
       };
 
       background = [
@@ -30,9 +33,11 @@ in {
           font_color = "rgb(${colors.base05})";
           inner_color = "rgb(${colors.base00})";
           outer_color = "rgb(${colors.base01})";
+          check_color = "rgb(${colors.base0B})";
           fail_color = "rgb(${colors.base08})";
           font_family = "monospace";
           placeholder_text = "<span color=\"##${colors.base03}\">password</span>";
+          fail_text = "<span text_transform=\"lowercase\">$FAIL</span>";
           fade_on_empty = false;
         }
       ];

@@ -182,7 +182,7 @@ in {
 
         "Mod+T".action = spawn "alacritty";
         "Mod+Space".action = spawn "fuzzel";
-        "Super+Alt+L".action = spawn "hyprlock";
+        "Super+Alt+L".action = spawn-sh "hyprlock & niri msg action power-off-monitors";
 
         XF86AudioRaiseVolume = {
           allow-when-locked = true;

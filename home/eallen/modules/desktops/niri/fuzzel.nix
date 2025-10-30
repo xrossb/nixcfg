@@ -13,7 +13,7 @@ in {
       main = {
         terminal = "${lib.getExe pkgs.alacritty} -e '{cmd}'";
         dpi-aware = false;
-        font = "monospace:size=12";
+        font = "monospace:size=14";
         horizontal-pad = 8;
         vertical-pad = 8;
         inner-pad = 8;

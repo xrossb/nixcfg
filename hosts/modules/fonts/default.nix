@@ -8,6 +8,8 @@
       liberation_ttf
       noto-fonts
       noto-fonts-emoji
+      ubuntu-sans
+      ubuntu-sans-mono
 
       nerd-fonts.symbols-only
     ];
