@@ -6,6 +6,7 @@
     baobab
     decibels
     discord
+    gearlever
     gnome-calculator
     gnome-calendar
     gnome-characters
