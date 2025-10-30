@@ -17,6 +17,7 @@ in {
       spacing = 16;
       modules-left = [
         "niri/workspaces"
+        "mpris"
       ];
       modules-center = [
         "clock"
@@ -36,7 +37,21 @@ in {
         spacing = 16;
         reverse-direction = true;
       };
+      mpris = {
+        "format" = " {artist} - {title}";
+        "artist-len" = 16;
+        "title-len" = 24;
+        "tooltip-format" = lib.concatStringsSep "\n" [
+          "{player} ({status})"
+          ""
+          "{title}"
+          "{album} - {artist}"
+          ""
+          "{position} / {length}"
+        ];
+      };
       network = rec {
+        max-length = 30;
         format-ethernet = " {ifname}";
         format-wifi = " {essid}";
         format-linked = " linked";

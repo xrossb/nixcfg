@@ -15,6 +15,7 @@ in {
     ./fuzzel.nix
     ./hyprlock.nix
     ./mako.nix
+    ./playerctld.nix
     ./polkit.nix
     ./swaybg.nix
     ./swayosd.nix
