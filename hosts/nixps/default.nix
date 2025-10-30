@@ -5,8 +5,9 @@
 }: {
   imports = [
     inputs.nixos-hardware.nixosModules.dell-xps-13-9350
-
     ./hardware-configuration.nix
+
+    ../modules/common
 
     ../modules/greeters/tuigreet
     ../modules/desktops/niri
@@ -50,20 +51,4 @@
   programs.steam.package = pkgs.steam.override {
     extraArgs = "-system-composer";
   };
-
-  # TODO: Move everything below into modules.
-
-  programs.nix-ld = {
-    enable = true;
-    libraries = [];
-  };
-
-  nix.settings.experimental-features = ["nix-command" "flakes"];
-
-  nixpkgs.config.allowUnfree = true;
-
-  security.pam.services.hyprlock = {};
-  security.pam.services.login.enableGnomeKeyring = true;
-  services.gnome.gnome-keyring.enable = true;
-  security.polkit.enable = true;
 }
