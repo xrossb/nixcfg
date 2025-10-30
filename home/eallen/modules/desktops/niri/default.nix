@@ -1,10 +1,12 @@
 {
   config,
   inputs,
+  lib,
   pkgs,
   ...
 }: let
   colors = config.lib.stylix.colors.withHashtag;
+  playerctl = lib.getExe pkgs.playerctl;
 in {
   imports = [
     inputs.niri.homeModules.niri
@@ -198,6 +200,10 @@ in {
           allow-when-locked = true;
           action = spawn "swayosd-client" "--input-volume" "mute-toggle";
         };
+
+        XF86AudioPrev.action = spawn playerctl "previous";
+        XF86AudioPlay.action = spawn playerctl "play-pause";
+        XF86AudioNext.action = spawn playerctl "next";
 
         XF86MonBrightnessUp = {
           allow-when-locked = true;
