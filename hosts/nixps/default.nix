@@ -14,15 +14,12 @@
     ../modules/users/eallen
 
     ../modules/bluetooth
-    ../modules/discord
-    ../modules/firefox
+    ../modules/desktop-apps
     ../modules/flatpak
     ../modules/fonts
     ../modules/graphics
-    ../modules/nautilus
     ../modules/pipewire
     ../modules/printing
-    ../modules/steam
     ../modules/stylix
     ../modules/wireless
   ];
@@ -64,19 +61,6 @@
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   nixpkgs.config.allowUnfree = true;
-
-  environment.systemPackages = with pkgs; [
-    loupe
-    vscode
-  ];
-
-  xdg.mime = {
-    enable = true;
-    defaultApplications = {
-      "text/*" = ["code.desktop"];
-      "image/*" = ["org.gnome.Loupe.desktop"];
-    };
-  };
 
   security.pam.services.hyprlock = {};
   security.pam.services.login.enableGnomeKeyring = true;
