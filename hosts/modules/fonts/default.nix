@@ -7,7 +7,7 @@
       fira-code
       liberation_ttf
       noto-fonts
-      noto-fonts-emoji
+      noto-fonts-color-emoji
       ubuntu-sans
       ubuntu-sans-mono
 
