@@ -5,6 +5,7 @@
 
     baobab
     decibels
+    deluge
     discord
     gearlever
     gnome-calculator
