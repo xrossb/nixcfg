@@ -3,7 +3,9 @@
     ./bat.nix
     ./fzf.nix
     ./git.nix
+    ./gpg.nix
     ./helix.nix
+    ./ssh.nix
     ./starship.nix
     ./zoxide.nix
   ];

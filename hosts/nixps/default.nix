@@ -19,6 +19,7 @@
     ../modules/flatpak
     ../modules/fonts
     ../modules/graphics
+    ../modules/openssh
     ../modules/pipewire
     ../modules/printing
     ../modules/secure-boot
