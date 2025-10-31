@@ -37,5 +37,9 @@
         name = "Noto Color Emoji";
       };
     };
+
+    targets = {
+      grub.enable = false;
+    };
   };
 }
