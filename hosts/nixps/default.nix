@@ -21,18 +21,13 @@
     ../modules/graphics
     ../modules/pipewire
     ../modules/printing
+    ../modules/secure-boot
     ../modules/stylix
     ../modules/wireless
   ];
 
   networking.hostName = "nixps";
 
-  boot.loader.grub = {
-    enable = true;
-    useOSProber = true;
-    efiSupport = true;
-    devices = ["nodev"];
-  };
   boot.loader.efi.canTouchEfiVariables = true;
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
