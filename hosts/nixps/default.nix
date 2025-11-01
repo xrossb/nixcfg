@@ -24,6 +24,7 @@
     ../modules/printing
     ../modules/secure-boot
     ../modules/stylix
+    ../modules/tailscale
     ../modules/wireless
   ];
 
