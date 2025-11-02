@@ -12,9 +12,10 @@ in {
     inputs.niri.homeModules.niri
     inputs.niri.homeModules.stylix
 
+    ./dunst.nix
     ./fuzzel.nix
     ./hyprlock.nix
-    ./mako.nix
+    # ./mako.nix
     ./playerctld.nix
     ./polkit.nix
     ./swaybg.nix
