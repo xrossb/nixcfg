@@ -19,7 +19,6 @@
     bluetuith
     brightnessctl
     btop
-    htop
     nix-tree
     tree
     wget
