@@ -4,6 +4,7 @@
 
     ./modules/alacritty
     ./modules/cli
+    ./modules/cliphist
     ./modules/stylix
   ];
 
