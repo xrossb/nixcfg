@@ -15,6 +15,7 @@
         size = 13;
       };
       mouse.hide_when_typing = true;
+      env.TERM = "xterm-256color"; # "alacritty" isn't recognised by a lot of CLI tools.
     };
   };
 }

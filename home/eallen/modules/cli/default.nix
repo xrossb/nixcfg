@@ -13,6 +13,10 @@
   programs.bash = {
     enable = true;
     enableCompletion = true;
+    shellAliases = {
+      ls = "ls --color --group-directories-first -vAF";
+      ll = "ls -l";
+    };
   };
 
   home.packages = with pkgs; [
