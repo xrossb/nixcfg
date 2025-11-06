@@ -126,7 +126,7 @@ in {
 
       window-rules = [
         {
-          matches = [{app-id = "firefox$";}];
+          matches = [{app-id = "firefox$";} {app-id = "^gnome-disks$";}];
           clip-to-geometry = true;
         }
         {
