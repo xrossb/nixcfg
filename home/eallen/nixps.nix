@@ -6,6 +6,7 @@
     ./modules/cli
     ./modules/cliphist
     ./modules/stylix
+    ./modules/userdirs
   ];
 
   home.username = "eallen";
