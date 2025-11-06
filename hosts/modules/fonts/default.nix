@@ -11,8 +11,9 @@
       ubuntu-sans
       ubuntu-sans-mono
 
-      nerd-fonts.symbols-only
       nerd-fonts.adwaita-mono
+      nerd-fonts.caskaydia-cove
+      nerd-fonts.symbols-only
     ];
   };
 }

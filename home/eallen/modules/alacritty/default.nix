@@ -11,7 +11,7 @@
         dynamic_padding = true;
       };
       font = {
-        normal.family = "Cascadia Code";
+        normal.family = "CaskaydiaCove Nerd Font Mono";
         size = 13;
       };
       mouse.hide_when_typing = true;
