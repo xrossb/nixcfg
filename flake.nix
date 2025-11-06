@@ -49,6 +49,12 @@
         specialArgs = {inherit inputs;};
         modules = [./hosts/nixps];
       };
+
+      ea-desktop25 = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = {inherit inputs;};
+        modules = [./hosts/ea-desktop25];
+      };
     };
   };
 }
