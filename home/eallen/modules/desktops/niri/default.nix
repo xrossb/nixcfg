@@ -34,15 +34,15 @@ in {
 
         # G9 Odyssey.
         "Samsung Electric Company LS49AG95 HNTRB00272" = {
-          layout = {
-            default-column-width.proportion = 0.33333;
-            preset-column-widths = [
-              {proportion = 0.25;}
-              {proportion = 0.33333;}
-              {proportion = 0.5;}
-              {proportion = 0.66667;}
-            ];
-          };
+          # layout = {
+          #   default-column-width.proportion = 0.33333;
+          #   preset-column-widths = [
+          #     {proportion = 0.25;}
+          #     {proportion = 0.33333;}
+          #     {proportion = 0.5;}
+          #     {proportion = 0.66667;}
+          #   ];
+          # };
         };
       };
 
