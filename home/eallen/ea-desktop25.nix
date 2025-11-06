@@ -9,6 +9,7 @@
     ./modules/alacritty
     ./modules/cli
     ./modules/cliphist
+    ./modules/easy-effects
     ./modules/stylix
     ./modules/userdirs
   ];
