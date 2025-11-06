@@ -67,6 +67,8 @@ in {
           accel-speed = 0.1;
           accel-profile = "flat";
         };
+
+        warp-mouse-to-focus.enable = true;
       };
 
       gestures.hot-corners.enable = false;
