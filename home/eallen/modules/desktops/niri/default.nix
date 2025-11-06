@@ -28,7 +28,23 @@ in {
   programs.niri = {
     package = pkgs.niri;
     settings = {
-      outputs."Sharp Corporation 0x1449 Unknown".scale = 1.0;
+      outputs = {
+        # Dell XPS 13 built-in display.
+        "Sharp Corporation 0x1449 Unknown".scale = 1.0;
+
+        # G9 Odyssey.
+        "Samsung Electric Company LS49AG95 HNTRB00272" = {
+          layout = {
+            default-column-width.proportion = 0.33333;
+            preset-column-widths = [
+              {proportion = 0.25;}
+              {proportion = 0.33333;}
+              {proportion = 0.5;}
+              {proportion = 0.66667;}
+            ];
+          };
+        };
+      };
 
       environment = {
         NIXOS_OZONE_WL = "1";

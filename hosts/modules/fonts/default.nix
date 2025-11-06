@@ -12,6 +12,7 @@
       ubuntu-sans-mono
 
       nerd-fonts.symbols-only
+      nerd-fonts.adwaita-mono
     ];
   };
 }

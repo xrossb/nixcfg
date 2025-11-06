@@ -136,7 +136,7 @@ in {
 
     style = ''
       * {
-        font-family: monospace, "Symbols Nerd Font";
+        font-family: "AdwaitaMono Nerd Font Propo";
         font-size: 14px;
         font-weight: bold;
       }
