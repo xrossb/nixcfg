@@ -24,6 +24,7 @@
     brightnessctl
     btop
     nix-tree
+    ripgrep
     tree
     wget
 
