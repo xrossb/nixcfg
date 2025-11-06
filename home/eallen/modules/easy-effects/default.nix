@@ -8,14 +8,14 @@
         plugins_order = [
           "rnnoise#0"
           "deesser#0"
-          "bass_loudness#0"
           "bass_enhancer#0"
           "compressor#0"
+          "filter#0"
         ];
 
         "rnnoise#0" = {
           "bypass" = false;
-          "enable-vad" = false;
+          "enable-vad" = true;
           "input-gain" = 0.0;
           "model-name" = "";
           "output-gain" = 0.0;
@@ -42,15 +42,6 @@
           "threshold" = -18.0;
         };
 
-        "bass_loudness#0" = {
-          "bypass" = false;
-          "input-gain" = 0.0;
-          "link" = -9.1;
-          "loudness" = -3.1;
-          "output" = -6.0;
-          "output-gain" = 0.0;
-        };
-
         "bass_enhancer#0" = {
           "amount" = 8.2;
           "blend" = 0.0;
@@ -63,9 +54,24 @@
           "scope" = 100.0;
         };
 
+        "filter#0" = {
+          "balance" = 0.0;
+          "bypass" = false;
+          "equal-mode" = "IIR";
+          "frequency" = 100.0;
+          "gain" = 0.0;
+          "input-gain" = 0.0;
+          "mode" = "RLC (BT)";
+          "output-gain" = 0.0;
+          "quality" = 0.0;
+          "slope" = "x1";
+          "type" = "High-pass";
+          "width" = 4.0;
+        };
+
         "compressor#0" = {
           "attack" = 20.0;
-          "boost-amount" = 6.0;
+          "boost-amount" = 20.0;
           "boost-threshold" = -72.0;
           "bypass" = false;
           "dry" = -100.0;
@@ -76,7 +82,7 @@
           "lpf-frequency" = 20000.0;
           "lpf-mode" = "off";
           "makeup" = 0.0;
-          "mode" = "Downward";
+          "mode" = "Boosting";
           "output-gain" = 0.0;
           "ratio" = 4.0;
           "release" = 100.0;
