@@ -52,4 +52,6 @@
   };
 
   system.stateVersion = "25.05";
+
+  hardware.usb-modeswitch.enable = true;
 }
