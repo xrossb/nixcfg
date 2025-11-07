@@ -29,7 +29,7 @@
   # TODO: Move these settings to an output block in the default Niri config, when
   # supported by niri-flake.
   programs.niri.settings.layout = {
-    default-column-width.proportion = lib.mkForce 0.33333;
+    default-column-width.proportion = lib.mkForce 0.25;
     preset-column-widths = lib.mkForce [
       {proportion = 0.25;}
       {proportion = 0.33333;}

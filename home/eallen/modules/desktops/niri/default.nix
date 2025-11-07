@@ -139,6 +139,11 @@ in {
             }
           ];
           open-floating = true;
+          default-floating-position = {
+            x = 8;
+            y = 8;
+            relative-to = "bottom-right";
+          };
         }
         {
           matches = [
