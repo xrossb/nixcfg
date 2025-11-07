@@ -54,4 +54,6 @@
   system.stateVersion = "25.05";
 
   hardware.usb-modeswitch.enable = true;
+  hardware.new-lg4ff.enable = true;
+  services.udev.packages = with pkgs; [oversteer];
 }
