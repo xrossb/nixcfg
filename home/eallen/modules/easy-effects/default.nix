@@ -71,7 +71,7 @@
 
         "compressor#0" = {
           "attack" = 20.0;
-          "boost-amount" = 20.0;
+          "boost-amount" = 12.0;
           "boost-threshold" = -72.0;
           "bypass" = false;
           "dry" = -100.0;
