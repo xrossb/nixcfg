@@ -14,6 +14,7 @@
 
     ../modules/users/eallen
 
+    ../modules/battery
     ../modules/bluetooth
     ../modules/desktop-apps
     ../modules/flatpak
