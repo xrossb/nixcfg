@@ -24,6 +24,10 @@
     };
     nixos-hardware.url = "github:NixOS/nixos-hardware";
     stylix.url = "github:nix-community/stylix";
+    shell-yeah = {
+      url = "github:xrossb/shell-yeah";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
