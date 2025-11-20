@@ -9,11 +9,11 @@
     discord
     gearlever
     gnome-calculator
-    gnome-calendar
+    # gnome-calendar
     gnome-characters
     gnome-clocks
     gnome-connections
-    gnome-contacts
+    # gnome-contacts
     gnome-disk-utility
     gnome-font-viewer
     gnome-weather
