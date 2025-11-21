@@ -593,11 +593,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1763704101,
-        "narHash": "sha256-lglJm0XOWOH/oqtB6VajnEY343b9GjAT4Bi8Q7AaHeI=",
+        "lastModified": 1763724671,
+        "narHash": "sha256-4SpDN3IiFzze5c2oT8x267eQMNJKd7kZsMtDJalpln0=",
         "owner": "xrossb",
         "repo": "shell-yeah",
-        "rev": "a21a7e550c8a0c95a83254c2230029e3373257ce",
+        "rev": "9b78d5031d89f3837aab62d2dd470857a33a2198",
         "type": "github"
       },
       "original": {
