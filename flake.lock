@@ -590,11 +590,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1763640508,
-        "narHash": "sha256-2zNv7edKAxyukPvB0/Bp7R9WB9WBnqKHKs3AlObVoNM=",
+        "lastModified": 1763693038,
+        "narHash": "sha256-pK0I928YFf72uLOL9fGPhzTG7EN/ekKwwumWldTMcSk=",
         "owner": "xrossb",
         "repo": "shell-yeah",
-        "rev": "d47b2d5232d3a4ce1fdd17226cd5c7e73ce52989",
+        "rev": "f8bfdf9bbfcf0a0924a0612293fbfc0315a562e5",
         "type": "github"
       },
       "original": {
