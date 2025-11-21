@@ -467,6 +467,22 @@
     },
     "nixpkgs_2": {
       "locked": {
+        "lastModified": 1762596750,
+        "narHash": "sha256-rXXuz51Bq7DHBlfIjN7jO8Bu3du5TV+3DSADBX7/9YQ=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "b6a8526db03f735b89dd5ff348f53f752e7ddc8e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_3": {
+      "locked": {
         "lastModified": 1762977756,
         "narHash": "sha256-4PqRErxfe+2toFJFgcRKZ0UI9NSIOJa+7RXVtBhy4KE=",
         "owner": "NixOS",
@@ -571,16 +587,14 @@
       "inputs": {
         "ags": "ags",
         "libastal-niri": "libastal-niri",
-        "nixpkgs": [
-          "nixpkgs"
-        ]
+        "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1763630247,
-        "narHash": "sha256-579WOCjymWJVFpQ+Na4EOhkkQDFJqSsCo3lfk/9IZJU=",
+        "lastModified": 1763640508,
+        "narHash": "sha256-2zNv7edKAxyukPvB0/Bp7R9WB9WBnqKHKs3AlObVoNM=",
         "owner": "xrossb",
         "repo": "shell-yeah",
-        "rev": "6205c194dd479c07eb35ef63652ff28772076a9a",
+        "rev": "d47b2d5232d3a4ce1fdd17226cd5c7e73ce52989",
         "type": "github"
       },
       "original": {
@@ -598,7 +612,7 @@
         "firefox-gnome-theme": "firefox-gnome-theme",
         "flake-parts": "flake-parts_2",
         "gnome-shell": "gnome-shell",
-        "nixpkgs": "nixpkgs_2",
+        "nixpkgs": "nixpkgs_3",
         "nur": "nur",
         "systems": "systems",
         "tinted-foot": "tinted-foot",

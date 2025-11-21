@@ -26,7 +26,8 @@
     stylix.url = "github:nix-community/stylix";
     shell-yeah = {
       url = "github:xrossb/shell-yeah";
-      inputs.nixpkgs.follows = "nixpkgs";
+      # TODO: Icons broken on latest nixpkgs.
+      # inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
