@@ -50,9 +50,4 @@
   };
 
   system.stateVersion = "25.05";
-
-  # Workaround for black Steam UI w/ xwayland-satellite + GPU accel enabled on Intel GPUs.
-  programs.steam.package = pkgs.steam.override {
-    extraArgs = "-system-composer";
-  };
 }
