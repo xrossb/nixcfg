@@ -24,6 +24,7 @@
     ../modules/logitech-g923
     ../modules/openssh
     ../modules/pipewire
+    ../modules/podman
     ../modules/printing
     ../modules/secure-boot
     ../modules/stylix
