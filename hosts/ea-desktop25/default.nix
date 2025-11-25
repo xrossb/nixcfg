@@ -26,6 +26,7 @@
     ../modules/pipewire
     ../modules/podman
     ../modules/printing
+    ../modules/r2modman
     ../modules/secure-boot
     ../modules/stylix
     ../modules/tailscale

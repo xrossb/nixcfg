@@ -20,7 +20,6 @@
     loupe
     nautilus
     papers
-    r2modman
     showtime
     snapshot
     vscode
