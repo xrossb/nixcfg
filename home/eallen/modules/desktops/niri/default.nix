@@ -77,7 +77,6 @@ in {
       layout = {
         gaps = 4;
         background-color = "transparent";
-        always-center-single-column = true;
 
         preset-column-widths = [
           {proportion = 0.33333;}
