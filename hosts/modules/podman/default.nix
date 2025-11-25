@@ -1,6 +1,11 @@
 {pkgs, ...}: {
   virtualisation = {
-    containers.enable = true;
+    containers = {
+      enable = true;
+      containersConf.settings = {
+        engine.compose_warning_logs = false;
+      };
+    };
     podman = {
       enable = true;
       dockerCompat = true;
