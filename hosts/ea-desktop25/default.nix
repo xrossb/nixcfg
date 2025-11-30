@@ -24,7 +24,7 @@
     ../modules/logitech-g923
     ../modules/openssh
     ../modules/pipewire
-    ../modules/podman
+    ../modules/docker
     ../modules/printing
     ../modules/r2modman
     ../modules/secure-boot
