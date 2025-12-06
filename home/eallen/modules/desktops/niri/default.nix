@@ -350,7 +350,7 @@ in {
         "Mod+Ctrl+8".action.move-column-to-workspace = 8;
         "Mod+Ctrl+9".action.move-column-to-workspace = 9;
 
-        "Mod+Tab".action = focus-window-previous;
+        # "Mod+Tab".action = focus-window-previous;
 
         "Mod+BracketLeft".action = consume-or-expel-window-left;
         "Mod+BracketRight".action = consume-or-expel-window-right;
