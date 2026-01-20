@@ -17,6 +17,9 @@
     shellAliases = {
       ls = "ls --color --group-directories-first -vAF";
       ll = "ls -l";
+      gcm = "git commit -m";
+      gds = "git diff --staged";
+      gsw = "git switch";
     };
   };
 
