@@ -21,6 +21,9 @@
       keys.normal = {
         space.space = "file_picker";
       };
+      keys.insert = {
+        "C-space" = "completion";
+      };
     };
     languages.language = [
       {
