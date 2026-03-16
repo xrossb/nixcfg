@@ -7,6 +7,7 @@
     decibels
     deluge
     discord
+    file-roller
     gearlever
     gnome-calculator
     # gnome-calendar
@@ -61,12 +62,14 @@
       "image/*" = ["org.gnome.Loupe.desktop"];
       "audio/*" = ["org.gnome.Decibels.desktop"];
       "video/*" = ["org.gnome.Showtime.desktop"];
+      "compressed/*" = ["org.gnome.FileRoller.desktop"];
       "application/pdf" = ["org.gnome.Papers.desktop"];
       "application/x-bzpdf" = ["org.gnome.Papers.desktop"];
       "application/x-ext-pdf" = ["org.gnome.Papers.desktop"];
       "application/x-gzpdf" = ["org.gnome.Papers.desktop"];
       "application/x-xzpdf" = ["org.gnome.Papers.desktop"];
       "application/illustrator" = ["org.gnome.Papers.desktop"];
+      "application/zip" = ["org.gnome.FileRoller.desktop"];
     };
   };
 }
