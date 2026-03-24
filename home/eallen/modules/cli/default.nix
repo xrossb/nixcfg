@@ -23,10 +23,6 @@
       gs = "git status";
       gsw = "git switch";
     };
-    bashrcExtra = ''
-      # use tmux for all sessions
-      [ -x "$(command -v tmux)" ] && [ -z "$TMUX" ] && tty -s && exec tmux new-session
-    '';
   };
 
   programs.tmux = {

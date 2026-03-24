@@ -3,6 +3,7 @@
     enable = true;
     theme = "ayu_dark";
     settings = {
+      terminal.shell = "tmux";
       window = {
         padding = {
           x = 4;
