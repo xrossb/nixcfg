@@ -7,9 +7,7 @@
   ...
 }: {
   imports = [
-    inputs.nixos-hardware.nixosModules.common-cpu-intel
-    inputs.nixos-hardware.nixosModules.common-pc-laptop
-    inputs.nixos-hardware.nixosModules.common-pc-ssd
+    inputs.nixos-hardware.nixosModules.chuwi-minibook-x
     ./hardware-configuration.nix
 
     ../modules/common
@@ -55,6 +53,9 @@
     LC_TELEPHONE = "en_AU.UTF-8";
     LC_TIME = "en_AU.UTF-8";
   };
+
+  console.keyMap = "us";
+  services.xserver.xkb.layout = "us";
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

@@ -20,5 +20,5 @@
     tag.gpgSign = true;
   };
 
-  programs.niri.settings.outputs.DSI-1.transform.rotation = 270;
+  programs.niri.settings.outputs.DSI-1.scale = 1.75;
 }

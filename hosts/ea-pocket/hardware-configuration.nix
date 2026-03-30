@@ -16,7 +16,6 @@
   boot.initrd.kernelModules = [];
   boot.kernelModules = ["kvm-intel"];
   boot.extraModulePackages = [];
-  boot.kernelParams = ["fbcon=rotate:1"];
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/f410d0c5-5aec-49fb-b7b9-3bf6fe691a1e";
