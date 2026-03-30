@@ -56,7 +56,11 @@ in {
       };
 
       input = {
-        keyboard.numlock = true;
+        keyboard = {
+          numlock = true;
+          repeat-delay = 200;
+          repeat-rate = 20;
+        };
 
         touchpad = {
           tap = true;

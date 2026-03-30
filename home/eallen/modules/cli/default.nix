@@ -27,16 +27,28 @@
 
   programs.tmux = {
     enable = true;
-    mouse = true;
-    keyMode = "vi";
-    baseIndex = 1;
-    terminal = "tmux-256color";
-    focusEvents = true;
-    aggressiveResize = true;
-    escapeTime = 0;
-    historyLimit = 10000;
     extraConfig = ''
+      # use ctrl+a as prefix
+      unbind C-b
+      set -g prefix C-a
+      bind C-a last-window
+      bind a send-prefix
+
+      set -g status-keys vi
+      set -g mode-keys vi
+      set -g renumber-windows on
+
+      # let me scrolllllll
+      set -g mouse on
+
+      set -g escape-time 0
+      set -g base-index 1
+      set -g aggressive-resize on
       set -g monitor-activity on
+
+      # stay in copy mode after drag
+      unbind -T copy-mode-vi MouseDragEnd1Pane
+      unbind -T copy-mode MouseDragEnd1Pane
 
       set -g set-titles on
       set -g set-titles-string '#{session_name} · #{b:pane_current_path} · #{?#{==:#{pane_title},#{host}},#{window_name},#{pane_title}}'
@@ -51,22 +63,12 @@
       set -g status-justify absolute-centre
       set -g status-right ""
 
-      # stay in copy mode
-      unbind -T copy-mode-vi MouseDragEnd1Pane
-      unbind -T copy-mode MouseDragEnd1Pane
-
-      # prefix + quick swap
-      unbind C-b
-      set -g prefix C-a
-      bind C-a last-window
-      bind a send-prefix
-
       # reverse splits
-      bind h split-window -v
-      bind v split-window -h
+      bind h split-window -v -c "#{pane_current_path}"
+      bind v split-window -h -c "#{pane_current_path}"
 
       # quick reload
-      bind r source-file ~/.config/tmux/tmux.conf
+      bind r source-file ~/.config/tmux/tmux.conf \; display-message "config reloaded"
 
       # pick windows
       bind -n M-1 select-window -t 1
@@ -80,14 +82,14 @@
       bind -n M-9 select-window -t 9
 
       # alt key pane navigation
-      bind -n M-Left select-pane -L
-      bind -n M-Right select-pane -R
-      bind -n M-Up select-pane -U
-      bind -n M-Down select-pane -D
-      bind -n M-h select-pane -L
-      bind -n M-l select-pane -R
-      bind -n M-k select-pane -U
-      bind -n M-j select-pane -D
+      bind -n M-Left if -F '#{pane_at_left}' ''' 'select-pane -L'
+      bind -n M-Right if -F '#{pane_at_right}' ''' 'select-pane -R'
+      bind -n M-Up if -F '#{pane_at_top}' ''' 'select-pane -U'
+      bind -n M-Down if -F '#{pane_at_bottom}' ''' 'select-pane -D'
+      bind -n M-h if -F '#{pane_at_left}' ''' 'select-pane -L'
+      bind -n M-l if -F '#{pane_at_right}' ''' 'select-pane -R'
+      bind -n M-k if -F '#{pane_at_top}' ''' 'select-pane -U'
+      bind -n M-j if -F '#{pane_at_bottom}' ''' 'select-pane -D'
 
       # swap panes
       bind Left swap-pane -s '{left-of}'
@@ -108,6 +110,10 @@
       bind -n M-L resize-pane -R 2
       bind -n M-K resize-pane -U 2
       bind -n M-J resize-pane -D 2
+
+      # kill without asking
+      bind x kill-pane
+      bind & kill-window
     '';
   };
 
