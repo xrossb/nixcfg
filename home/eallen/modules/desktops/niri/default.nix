@@ -79,7 +79,14 @@ in {
       gestures.hot-corners.enable = false;
 
       layout = {
-        gaps = 4;
+        gaps = 8;
+        struts = {
+          left = 8;
+          right = 8;
+          top = 8;
+          bottom = 8;
+        };
+
         background-color = "transparent";
 
         preset-column-widths = [
@@ -96,21 +103,24 @@ in {
           {proportion = 0.66667;}
         ];
 
-        focus-ring = {
-          width = 1;
-          active.gradient = {
-            from = colors.base0C;
-            to = colors.base0D;
-            angle = 45;
-          };
+        focus-ring.enable = false;
+        border = {
+          enable = true;
+          width = 2;
+          active = {color = colors.base0C;};
+          inactive = {color = colors.base02;};
+          urgent = {color = colors.base09;};
         };
+
+        shadow.enable = true;
 
         tab-indicator = {
           width = 8;
-          length.total-proportion = 1.0;
-          gap = 4;
-          gaps-between-tabs = 4;
+          length.total-proportion = 0.5;
+          gap = 8;
+          gaps-between-tabs = 8;
           place-within-column = true;
+          corner-radius = 8.0;
         };
       };
 
@@ -132,7 +142,12 @@ in {
 
       window-rules = [
         {
-          matches = [{app-id = "firefox$";} {app-id = "^gnome-disks$";}];
+          geometry-corner-radius = {
+            top-left = 16.0;
+            top-right = 16.0;
+            bottom-left = 16.0;
+            bottom-right = 16.0;
+          };
           clip-to-geometry = true;
         }
         {
@@ -182,11 +197,7 @@ in {
         }
         {
           matches = [{is-window-cast-target = true;}];
-          border = {
-            enable = true;
-            width = 1;
-            inactive.color = colors.base08;
-          };
+          border.inactive.color = colors.base08;
           shadow = {
             enable = true;
             color = "${colors.base08}b0";
@@ -194,11 +205,6 @@ in {
         }
         {
           matches = [{is-urgent = true;}];
-          border = {
-            enable = true;
-            width = 1;
-            urgent.color = colors.base09;
-          };
           shadow = {
             enable = true;
             color = "${colors.base09}b0";
