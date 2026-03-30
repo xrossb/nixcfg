@@ -55,8 +55,14 @@
     LC_TIME = "en_AU.UTF-8";
   };
 
-  console.keyMap = "us";
-  services.xserver.xkb.layout = "us";
+  console.packages = with pkgs; [terminus_font];
+  console.font = "ter-v32n";
+
+  # make the enter key register as enter instead of kp_enter (wtf!)
+  services.udev.extraHwdb = ''
+    evdev:name:AT Translated Set 2 keyboard:*
+      KEYBOARD_KEY_9c=enter
+  '';
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
