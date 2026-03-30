@@ -62,6 +62,12 @@
         specialArgs = {inherit inputs;};
         modules = [./hosts/ea-desktop25];
       };
+
+      ea-pocket = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = {inherit inputs;};
+        modules = [./hosts/ea-pocket];
+      };
     };
   };
 }
