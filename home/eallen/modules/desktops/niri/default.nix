@@ -130,10 +130,10 @@ in {
       };
 
       layer-rules = [
-        {
-          matches = [{namespace = "^launcher$";}];
-          shadow.enable = true;
-        }
+        # {
+        #   matches = [{namespace = "^launcher$";}];
+        #   shadow.enable = true;
+        # }
         {
           matches = [{namespace = "^wallpaper$";}];
           place-within-backdrop = true;
