@@ -9,7 +9,7 @@
   playerctl = lib.getExe pkgs.playerctl;
 in {
   imports = [
-    inputs.niri.homeModules.niri
+    inputs.niri.homeModules.config
     inputs.niri.homeModules.stylix
 
     # ./dunst.nix
