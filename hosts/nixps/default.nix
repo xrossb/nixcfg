@@ -32,8 +32,9 @@
   networking.hostName = "nixps";
 
   boot.loader.efi.canTouchEfiVariables = true;
-
   boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  services.tlp.enable = true;
 
   time.timeZone = "Australia/Melbourne";
   i18n.defaultLocale = "en_AU.UTF-8";
