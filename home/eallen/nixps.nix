@@ -11,7 +11,7 @@
 
   home.username = "eallen";
   home.homeDirectory = "/home/${config.home.username}";
-  home.stateVersion = "25.05";
+  home.stateVersion = "26.05";
 
   # Enable commit signing with the on-device GPG key.
   programs.git.settings = {
