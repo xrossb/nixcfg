@@ -63,6 +63,9 @@
       set -g status-justify absolute-centre
       set -g status-right ""
 
+      # create windows at current path
+      bind c new-window -c "#{pane_current_path}"
+
       # reverse splits
       bind h split-window -v -c "#{pane_current_path}"
       bind v split-window -h -c "#{pane_current_path}"
