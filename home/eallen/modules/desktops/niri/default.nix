@@ -89,6 +89,8 @@ in {
 
         background-color = "transparent";
 
+        always-center-single-column = true;
+
         preset-column-widths = [
           {proportion = 0.33333;}
           {proportion = 0.5;}
