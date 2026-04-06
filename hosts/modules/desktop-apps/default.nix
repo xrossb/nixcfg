@@ -29,6 +29,29 @@
   programs.appimage = {
     enable = true;
     binfmt = true;
+    package = pkgs.appimage-run.override {
+      extraPkgs = pkgs:
+        with pkgs; [
+          autoconf
+          automake
+          cairo
+          cmake
+          ffmpeg
+          gcc
+          gnumake
+          icu
+          libffi
+          libjpeg
+          libressl
+          libxcrypt
+          libxcrypt-legacy
+          libxml2
+          libxslt
+          openssl_3
+          pkg-config
+          zstd
+        ];
+    };
   };
 
   programs.dconf.enable = true;

@@ -3,7 +3,7 @@
   pkgs,
   ...
 }: let
-  shell-yeah = inputs.shell-yeah.packages.${pkgs.system}.default;
+  shell-yeah = inputs.shell-yeah.packages.${pkgs.stdenv.hostPlatform.system}.default;
 in {
   systemd.user.services.shell-yeah = {
     Unit = {
