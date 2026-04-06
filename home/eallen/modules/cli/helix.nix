@@ -5,9 +5,9 @@
 }: let
   nil = lib.getExe pkgs.nil;
   alejandra = lib.getExe pkgs.alejandra;
-  typescript-language-server = lib.getExe pkgs.nodePackages.typescript-language-server;
-  eslint = "${pkgs.nodePackages.eslint}/bin/eslint";
-  prettier = lib.getExe pkgs.nodePackages.prettier;
+  typescript-language-server = lib.getExe pkgs.typescript-language-server;
+  eslint = "${pkgs.eslint}/bin/eslint";
+  prettier = lib.getExe pkgs.prettier;
 in {
   programs.helix = {
     enable = true;
