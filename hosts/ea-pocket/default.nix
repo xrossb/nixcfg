@@ -8,7 +8,7 @@
 }: {
   imports = [
     inputs.nixos-hardware.nixosModules.chuwi-minibook-x
-    ./hardware-configuration.nix
+    ./hardware.nix
 
     ../modules/common
 

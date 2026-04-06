@@ -5,7 +5,7 @@
 }: {
   imports = [
     inputs.nixos-hardware.nixosModules.dell-xps-13-9350
-    ./hardware-configuration.nix
+    ./hardware.nix
 
     ../modules/common
 
