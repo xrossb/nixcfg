@@ -1,4 +1,8 @@
-{config, ...}: {
+{
+  config,
+  lib,
+  ...
+}: {
   imports = [
     ./modules/desktops/niri
 
@@ -21,4 +25,5 @@
   };
 
   programs.niri.settings.outputs.DSI-1.scale = 1.5;
+  programs.niri.settings.input.touchpad.tap = lib.mkForce false;
 }
