@@ -31,6 +31,8 @@
   ];
 
   services.thermald.enable = true;
+  services.tlp.enable = true;
+  hardware.sensor.iio.enable = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
