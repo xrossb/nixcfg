@@ -4,6 +4,7 @@
     gnome-icon-theme
 
     baobab
+    cider-2
     decibels
     deluge
     discord
