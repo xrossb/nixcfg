@@ -12,6 +12,7 @@ in {
   programs.helix = {
     enable = true;
     defaultEditor = true;
+    extraPackages = with pkgs; [vscode-langservers-extracted];
     settings = {
       theme = "github_dark";
       editor = {
