@@ -124,13 +124,10 @@
     bluetuith
     brightnessctl
     btop
+    lf
     nix-tree
     ripgrep
     tree
     wget
-
-    # Nix formatter + LSP.
-    alejandra
-    nil
   ];
 }
