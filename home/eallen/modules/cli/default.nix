@@ -45,6 +45,7 @@
       set -g base-index 1
       set -g aggressive-resize on
       set -g monitor-activity on
+      set -g history-limit 10000
 
       # stay in copy mode after drag
       unbind -T copy-mode-vi MouseDragEnd1Pane
