@@ -17,6 +17,8 @@ in {
     settings = {
       theme = "github_dark";
       editor = {
+        line-number = "relative";
+        cursor-shape.insert = "bar";
         rulers = [
           80
           100
@@ -26,9 +28,10 @@ in {
           tab = "all";
         };
         inline-diagnostics = {
-          cursor-line = "info";
+          cursor-line = "hint";
           other-lines = "warning";
         };
+        soft-wrap.enable = true;
       };
       keys.normal = {
         space.space = "file_picker";
