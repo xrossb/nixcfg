@@ -71,7 +71,7 @@
       };
 
       nix_shell = {
-        format = "[*$state (\\($name\\))]($style)";
+        format = "[*]($style)";
         style = "bright-blue";
       };
     };
