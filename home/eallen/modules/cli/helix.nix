@@ -45,7 +45,10 @@ in {
         nil.command = nil;
         nixd.command = nixd;
 
-        typescript-language-server.command = typescript-language-server;
+        typescript-language-server = {
+          command = typescript-language-server;
+          config.preferences.importModuleSpecifierPreference = "non-relative";
+        };
         eslint = {
           command = eslint;
           args = ["--stdin"];
