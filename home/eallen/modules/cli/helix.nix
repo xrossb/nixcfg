@@ -7,8 +7,8 @@
   nixd = lib.getExe pkgs.nixd;
   alejandra = lib.getExe pkgs.alejandra;
   typescript-language-server = lib.getExe pkgs.typescript-language-server;
-  eslint = "${pkgs.eslint}/bin/eslint";
-  prettier = lib.getExe pkgs.prettier;
+  oxlint = lib.getExe pkgs.oxlint;
+  oxfmt = lib.getExe pkgs.oxfmt;
 in {
   programs.helix = {
     enable = true;
@@ -43,9 +43,13 @@ in {
         nixd.command = nixd;
 
         typescript-language-server.command = typescript-language-server;
-        eslint = {
-          command = eslint;
-          args = ["--stdin"];
+        oxlint = {
+          command = oxlint;
+          args = ["--lsp"];
+        };
+        oxfmt = {
+          command = oxfmt;
+          args = ["--lsp"];
         };
       };
 
@@ -58,19 +62,19 @@ in {
         }
         {
           name = "typescript";
-          language-servers = ["typescript-language-server" "eslint"];
+          language-servers = ["typescript-language-server" "oxlint" "oxfmt"];
           formatter = {
-            command = prettier;
-            args = ["--parser" "typescript"];
+            command = oxfmt;
+            args = ["--stdin-filepath" "%{buffer_name}"];
           };
           auto-format = true;
         }
         {
           name = "tsx";
-          language-servers = ["typescript-language-server" "eslint"];
+          language-servers = ["typescript-language-server" "oxlint" "oxfmt"];
           formatter = {
-            command = prettier;
-            args = ["--parser" "typescript"];
+            command = oxfmt;
+            args = ["--stdin-filepath" "%{buffer_name}"];
           };
           auto-format = true;
         }
