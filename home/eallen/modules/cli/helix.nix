@@ -4,6 +4,7 @@
   ...
 }: let
   nil = lib.getExe pkgs.nil;
+  nixd = lib.getExe pkgs.nixd;
   alejandra = lib.getExe pkgs.alejandra;
   typescript-language-server = lib.getExe pkgs.typescript-language-server;
   eslint = "${pkgs.eslint}/bin/eslint";
@@ -39,6 +40,7 @@ in {
     languages = {
       language-server = {
         nil.command = nil;
+        nixd.command = nixd;
 
         typescript-language-server.command = typescript-language-server;
         eslint = {
@@ -50,7 +52,7 @@ in {
       language = [
         {
           name = "nix";
-          language-servers = ["nil"];
+          language-servers = ["nil" "nixd"];
           formatter.command = alejandra;
           auto-format = true;
         }
