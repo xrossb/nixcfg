@@ -24,7 +24,18 @@
     papers
     showtime
     snapshot
-    vscode
+    (symlinkJoin {
+      name = "vscode-with-tools";
+      paths = [vscode];
+      buildInputs = [makeWrapper];
+      postBuild = ''
+        wrapProgram $out/bin/code \
+          --prefix PATH : ${lib.makeBinPath [
+          alejandra
+          nixd
+        ]}
+      '';
+    })
   ];
 
   programs.appimage = {
