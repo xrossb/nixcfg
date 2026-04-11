@@ -13,7 +13,10 @@ in {
   programs.helix = {
     enable = true;
     defaultEditor = true;
-    extraPackages = with pkgs; [vscode-langservers-extracted];
+    extraPackages = with pkgs; [
+      vscode-langservers-extracted
+      rust-analyzer
+    ];
     settings = {
       theme = "github_dark";
       editor = {

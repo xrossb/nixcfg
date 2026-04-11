@@ -33,6 +33,7 @@
           --prefix PATH : ${lib.makeBinPath [
           alejandra
           nixd
+          rust-analyzer
         ]}
       '';
     })
