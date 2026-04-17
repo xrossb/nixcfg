@@ -16,6 +16,7 @@ in {
     extraPackages = with pkgs; [
       vscode-langservers-extracted
       rust-analyzer
+      rustfmt
     ];
     settings = {
       theme = "github_dark";
