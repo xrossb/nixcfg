@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ./bat.nix
+    ./comma.nix
     ./direnv.nix
     ./fzf.nix
     ./git.nix
