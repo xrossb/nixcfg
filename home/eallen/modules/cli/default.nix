@@ -7,6 +7,7 @@
     ./git.nix
     ./gpg.nix
     ./helix.nix
+    ./pi.nix
     ./ssh.nix
     ./starship.nix
     ./zoxide.nix
