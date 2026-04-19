@@ -37,6 +37,8 @@
 
       set -g status-keys vi
       set -g mode-keys vi
+      set -g extended-keys on
+      set -g extended-keys-format csi-u
       set -g renumber-windows on
 
       # let me scrolllllll
