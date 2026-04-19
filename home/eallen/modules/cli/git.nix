@@ -38,13 +38,15 @@ in {
         cleanout = "!git clean -df && git restore .";
         default = "!git remote show origin | sed -n '/HEAD branch/s/.*: //p'";
         grab = ''
-          !git branch -r --sort=committerdate --format='%(refname:lstrip=2)' \
+          !git branch -r --sort=-committerdate --format='%(refname:lstrip=2)' \
             | ${fzf} --preview='git diff HEAD...{1} | ${delta}' --preview-window='right:70%' \
             | sed 's/origin\\///' \
             | xargs git switch
         '';
         recent = ''
-
+          !git branch --sort=-committerdate --format='%(refname:lstrip=2)' \
+            | ${fzf} --preview='git diff HEAD...{1} | ${delta}' --preview-window='right:70%' \
+            | xargs git switch
         '';
         unwip = "!git log -n 1 | grep -q -c wip && git reset HEAD~1";
         wip = ''
