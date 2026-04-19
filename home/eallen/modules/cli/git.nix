@@ -37,6 +37,11 @@ in {
       alias = {
         cleanout = "!git clean -df && git restore .";
         default = "!git remote show origin | sed -n '/HEAD branch/s/.*: //p'";
+        gone = ''
+          !git branch --format '%(refname:short) %(upstream:track,nobracket)' \
+            | awk '{ if ($2 == "gone") print $1 }' \
+            | xargs git branch -D
+        '';
         grab = ''
           !git branch -r --sort=-committerdate --format='%(refname:lstrip=2)' \
             | ${fzf} --preview='git diff HEAD...{1} | ${delta}' --preview-window='right:70%' \
