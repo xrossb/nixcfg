@@ -21,7 +21,6 @@ in {
         minimal-lines = true;
         width = 64;
         match-counter = true;
-        show-actions = true;
       };
 
       border = {
