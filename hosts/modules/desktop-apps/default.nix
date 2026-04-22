@@ -3,27 +3,11 @@
     adwaita-icon-theme
     gnome-icon-theme
 
-    baobab
-    cider-2
-    decibels
-    deluge
-    discord
-    file-roller
-    gearlever
-    gnome-calculator
-    # gnome-calendar
-    gnome-characters
-    gnome-clocks
-    gnome-connections
-    # gnome-contacts
     gnome-disk-utility
-    gnome-font-viewer
-    gnome-weather
-    loupe
     nautilus
-    papers
-    showtime
-    snapshot
+
+    cider-2
+
     (symlinkJoin {
       name = "vscode-with-tools";
       paths = [vscode];
@@ -34,6 +18,7 @@
           alejandra
           nixd
           rust-analyzer
+          rustfmt
         ]}
       '';
     })

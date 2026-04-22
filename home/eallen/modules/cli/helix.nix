@@ -6,6 +6,7 @@
   nil = lib.getExe pkgs.nil;
   nixd = lib.getExe pkgs.nixd;
   alejandra = lib.getExe pkgs.alejandra;
+
   typescript-language-server = lib.getExe pkgs.typescript-language-server;
   eslint = "${pkgs.eslint}/bin/eslint";
   prettier = lib.getExe pkgs.prettier;
