@@ -16,6 +16,7 @@
       "org.gnome.FileRoller"
       "org.gnome.font-viewer"
       "org.gnome.Loupe"
+      "org.gnome.Loupe.HEIC"
       "org.gnome.Papers"
       "org.gnome.Showtime"
 
