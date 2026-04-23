@@ -22,7 +22,6 @@
     ../modules/fonts
     ../modules/graphics
     ../modules/logitech-g923
-    ../modules/ollama
     ../modules/openssh
     ../modules/pipewire
     ../modules/docker
