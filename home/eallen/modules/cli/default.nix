@@ -18,11 +18,16 @@
     shellAliases = {
       ls = "ls --color --group-directories-first -vAF";
       ll = "ls -l";
+
       gcm = "git commit -m";
       gd = "git diff";
       gds = "git diff --staged";
       gs = "git status";
       gsw = "git switch";
+
+      ns = "sudo nixos-rebuild switch";
+      nt = "sudo nixos-rebuild test";
+      gc = "sudo nix-collect-garbage -d";
     };
   };
 
