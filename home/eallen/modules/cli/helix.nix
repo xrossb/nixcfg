@@ -23,21 +23,27 @@ in {
       theme = "github_dark";
       editor = {
         bufferline = "always";
+        color-modes = true;
         line-number = "relative";
         cursor-shape.insert = "bar";
+        trim-final-newlines = true;
+        trim-trailing-whitespace = true;
+        preview-completion-insert = false;
         rulers = [
           80
           100
         ];
-        whitespace.render = {
-          space = "all";
-          tab = "all";
-        };
         inline-diagnostics = {
-          cursor-line = "hint";
-          other-lines = "warning";
+          cursor-line = "warning";
+          other-lines = "error";
         };
         soft-wrap.enable = true;
+        indent-guides = {
+          render = true;
+          character = "▏";
+          skip-levels = 1;
+        };
+        lsp.display-progress-messages = true;
       };
       keys.normal = {
         space.space = "file_picker";
