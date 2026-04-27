@@ -10,6 +10,10 @@
   typescript-language-server = lib.getExe pkgs.typescript-language-server;
   eslint = "${pkgs.eslint}/bin/eslint";
   prettier = lib.getExe pkgs.prettier;
+  usePrettier = lang: {
+    command = prettier;
+    args = ["--parser" lang];
+  };
 in {
   programs.helix = {
     enable = true;
@@ -77,19 +81,23 @@ in {
         {
           name = "typescript";
           language-servers = ["typescript-language-server" "eslint"];
-          formatter = {
-            command = prettier;
-            args = ["--parser" "typescript"];
-          };
+          formatter = usePrettier "typescript";
           auto-format = true;
         }
         {
           name = "tsx";
           language-servers = ["typescript-language-server" "eslint"];
-          formatter = {
-            command = prettier;
-            args = ["--parser" "typescript"];
-          };
+          formatter = usePrettier "typescript";
+          auto-format = true;
+        }
+        {
+          name = "css";
+          formatter = usePrettier "css";
+          auto-format = true;
+        }
+        {
+          name = "scss";
+          formatter = usePrettier "scss";
           auto-format = true;
         }
       ];
