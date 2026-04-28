@@ -10,6 +10,7 @@
   typescript-language-server = lib.getExe pkgs.typescript-language-server;
   eslint = "${pkgs.eslint}/bin/eslint";
   prettier = lib.getExe pkgs.prettier;
+
   usePrettier = lang: {
     command = prettier;
     args = ["--parser" lang];
@@ -18,44 +19,57 @@ in {
   programs.helix = {
     enable = true;
     defaultEditor = true;
+
     extraPackages = with pkgs; [
       vscode-langservers-extracted
       rust-analyzer
       rustfmt
     ];
+
     settings = {
       theme = "github_dark";
+
       editor = {
         bufferline = "multiple";
         color-modes = true;
         line-number = "relative";
-        cursor-shape.insert = "bar";
-        trim-final-newlines = true;
-        trim-trailing-whitespace = true;
         preview-completion-insert = false;
         rulers = [
           80
           100
         ];
-        inline-diagnostics = {
-          cursor-line = "warning";
-          other-lines = "error";
+        trim-final-newlines = true;
+        trim-trailing-whitespace = true;
+
+        cursor-shape = {
+          insert = "bar";
         };
-        soft-wrap.enable = true;
+
         indent-guides = {
           render = true;
           character = "▏";
           skip-levels = 1;
         };
-        lsp.display-progress-messages = true;
+
+        inline-diagnostics = {
+          cursor-line = "warning";
+          other-lines = "error";
+        };
+
+        lsp = {display-progress-messages = true;};
+
+        soft-wrap = {enable = true;};
       };
-      keys.normal = {
-        space.space = "file_picker";
-      };
+
       keys.insert = {
         "C-space" = "completion";
       };
+
+      keys.normal = {
+        space.space = "file_picker";
+      };
     };
+
     languages = {
       language-server = {
         nil.command = nil;
