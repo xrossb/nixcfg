@@ -26,7 +26,7 @@ in {
     settings = {
       theme = "github_dark";
       editor = {
-        bufferline = "always";
+        bufferline = "multiple";
         color-modes = true;
         line-number = "relative";
         cursor-shape.insert = "bar";
