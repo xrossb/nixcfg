@@ -21,9 +21,16 @@ in {
     defaultEditor = true;
 
     extraPackages = with pkgs; [
+      # html, css, json, eslint
       vscode-langservers-extracted
+
+      # rust
       rust-analyzer
       rustfmt
+
+      # toml
+      taplo
+      tombi
     ];
 
     settings = {
