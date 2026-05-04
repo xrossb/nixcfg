@@ -173,6 +173,12 @@ in {
             }
           ];
           open-focused = false;
+          geometry-corner-radius = {
+            top-left = 0.0;
+            top-right = 0.0;
+            bottom-left = 0.0;
+            bottom-right = 0.0;
+          };
           default-floating-position = {
             x = 0;
             y = 0;
@@ -386,8 +392,8 @@ in {
         "Mod+Shift+Minus".action = set-window-height "-10%";
         "Mod+Shift+Equal".action = set-window-height "+10%";
 
-        "Mod+V".action = toggle-window-floating;
-        "Mod+Shift+V".action = switch-focus-between-floating-and-tiling;
+        "Mod+Ctrl+V".action = toggle-window-floating;
+        "Mod+V".action = switch-focus-between-floating-and-tiling;
 
         "Mod+W".action = toggle-column-tabbed-display;
 
