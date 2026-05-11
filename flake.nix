@@ -4,6 +4,12 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
+    flake-parts = {
+      url = "github:hercules-ci/flake-parts";
+      inputs.nixpkgs-lib.follows = "nixpkgs";
+    };
+    import-tree.url = "github:vic/import-tree";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -38,40 +44,9 @@
   };
 
   outputs = {
-    nixpkgs,
-    systems,
+    flake-parts,
+    import-tree,
     ...
-  } @ inputs: let
-    lib = nixpkgs.lib;
-    forEachSystem = f: lib.genAttrs (import systems) (system: f pkgsFor.${system});
-    pkgsFor = lib.genAttrs (import systems) (
-      system:
-        import nixpkgs {
-          inherit system;
-          config.allowUnfree = true;
-        }
-    );
-  in {
-    formatter = forEachSystem (pkgs: pkgs.alejandra);
-
-    nixosConfigurations = {
-      nixps = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = {inherit inputs;};
-        modules = [./hosts/nixps];
-      };
-
-      ea-desktop25 = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = {inherit inputs;};
-        modules = [./hosts/ea-desktop25];
-      };
-
-      ea-pocket = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = {inherit inputs;};
-        modules = [./hosts/ea-pocket];
-      };
-    };
-  };
+  } @ inputs:
+    flake-parts.lib.mkFlake {inherit inputs;} (import-tree ./modules);
 }
