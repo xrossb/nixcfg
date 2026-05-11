@@ -30,6 +30,7 @@
       directory = {
         format = "[$path]($style) ";
         style = "blue";
+        truncation_length = 8;
       };
 
       git_branch = {
