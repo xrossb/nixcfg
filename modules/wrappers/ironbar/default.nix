@@ -26,11 +26,8 @@
     in {
       inherit pkgs;
       package = pkgs.ironbar;
-      flags = {
-        "--theme" = "custom"; # required to pick up style.css?
-      };
       env = {
-        IRONBAR_CSS = ./style.css;
+        IRONBAR_CSS = toString ./style.css;
         IRONBAR_CONFIG = builtins.toFile "config.json" (builtins.toJSON config);
       };
     });
