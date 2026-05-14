@@ -4,6 +4,8 @@
       config = {
         position = "top";
         height = 30;
+        layer = "overlay";
+        popup_autohide = true;
         start = [
           {type = "launcher";}
           {type = "workspaces";}
