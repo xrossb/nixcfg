@@ -24,6 +24,11 @@ in {
       # html, css, json, eslint
       vscode-langservers-extracted
 
+      # go
+      gopls
+      golangci-lint-langserver
+      delve
+
       # rust
       rust-analyzer
       rustfmt
