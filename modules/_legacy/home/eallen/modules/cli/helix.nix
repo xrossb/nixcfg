@@ -25,9 +25,10 @@ in {
       vscode-langservers-extracted
 
       # go
-      gopls
-      golangci-lint-langserver
       delve
+      gopls
+      golangci-lint
+      golangci-lint-langserver
 
       # rust
       rust-analyzer
