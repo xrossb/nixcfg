@@ -85,6 +85,8 @@ in {
 
     languages = {
       language-server = {
+        gopls.config.gofumpt = true;
+
         nil.command = nil;
         nixd.command = nixd;
 
