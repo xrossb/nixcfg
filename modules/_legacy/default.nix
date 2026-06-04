@@ -1,22 +1,34 @@
-{inputs, ...}: let
+{
+  inputs,
+  withSystem,
+  ...
+}: let
   lib = inputs.nixpkgs.lib;
+  nixosSystem = system: config:
+    withSystem system (
+      {self', ...}:
+        lib.nixosSystem (
+          lib.recursiveUpdate
+          {
+            inherit system;
+            specialArgs = {
+              inherit inputs self';
+            };
+          }
+          config
+        )
+    );
 in {
   flake.nixosConfigurations = {
-    nixps = lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = {inherit inputs;};
+    nixps = nixosSystem "x86_64-linux" {
       modules = [./hosts/nixps];
     };
 
-    ea-desktop25 = lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = {inherit inputs;};
+    ea-desktop25 = nixosSystem "x86_64-linux" {
       modules = [./hosts/ea-desktop25];
     };
 
-    ea-pocket = lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = {inherit inputs;};
+    ea-pocket = nixosSystem "x86_64-linux" {
       modules = [./hosts/ea-pocket];
     };
   };

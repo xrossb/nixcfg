@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  self',
+  ...
+}: {
   environment.systemPackages = with pkgs; [
     adwaita-icon-theme
     gnome-icon-theme
@@ -8,7 +12,7 @@
 
     cider-2
 
-    vscodium
+    self'.packages.vscodium
   ];
 
   programs.appimage = {
