@@ -1,6 +1,7 @@
 {
   config,
   inputs,
+  self',
   ...
 }: {
   imports = [
@@ -23,7 +24,7 @@
     ];
   };
 
-  home-manager.extraSpecialArgs = {inherit inputs;};
+  home-manager.extraSpecialArgs = {inherit inputs self';};
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
   home-manager.backupFileExtension = "bak";
