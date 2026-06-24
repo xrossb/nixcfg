@@ -1,5 +1,6 @@
 {pkgs, ...}: {
   nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.trusted-users = ["eallen"];
   nixpkgs.config.allowUnfree = true;
 
   programs.nix-ld = {
