@@ -1,6 +1,11 @@
 {pkgs, ...}: {
   nix.settings.experimental-features = ["nix-command" "flakes"];
   nix.settings.trusted-users = ["eallen"];
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 7d";
+  };
   nixpkgs.config.allowUnfree = true;
 
   programs.nix-ld = {
