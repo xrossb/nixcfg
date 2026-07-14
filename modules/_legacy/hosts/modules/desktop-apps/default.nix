@@ -12,6 +12,8 @@
 
     cider-2
 
+    gamescope
+
     self'.packages.vscodium
   ];
 
