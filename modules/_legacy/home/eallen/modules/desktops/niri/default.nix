@@ -222,6 +222,7 @@ in {
       binds = with config.lib.niri.actions; {
         "Mod+Shift+Slash".action = show-hotkey-overlay;
 
+        "Mod+E".action = spawn "nautilus";
         "Mod+T".action = spawn "alacritty";
         "Mod+Space".action = spawn "fuzzel";
         "Super+Alt+L".action = spawn-sh "hyprlock & niri msg action power-off-monitors";
