@@ -185,7 +185,7 @@
         menu-actions = {
           hibernate = "systemctl hibernate";
           poweroff = "systemctl poweroff";
-          reboot = "systemctl reboot";
+          restart = "systemctl reboot";
           signout = lib.getExe pkgs.wayland-logout;
           sleep = "systemctl suspend";
         };
