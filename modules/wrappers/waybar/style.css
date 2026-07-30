@@ -1,0 +1,63 @@
+* {
+  font-family: "JetBrains Mono", "Material Symbols Rounded";
+  font-size: 11pt;
+}
+
+window#waybar {
+  background-color: #0b0e14;
+  color: #e6e1cf;
+}
+
+.module {
+  padding: 0 8px;
+}
+
+.module:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+#clock {
+  font-size: 10pt;
+}
+
+#network.disconnected {
+  opacity: 0.5;
+}
+
+#tray {
+  padding: 0;
+}
+
+#tray:hover {
+  all: unset;
+}
+
+#tray widget > image {
+  padding: 0 8px;
+}
+
+#tray widget:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+#workspaces {
+  padding: 0
+}
+
+#workspaces:hover {
+  all: unset;
+}
+
+#workspaces button {
+  all: inherit;
+  font-size: 10pt;
+  padding: 0 10px;
+}
+
+#workspaces button.empty label {
+  opacity: 0.3;
+}
+
+#workspaces button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
