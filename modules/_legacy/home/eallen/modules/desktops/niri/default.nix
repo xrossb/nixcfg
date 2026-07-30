@@ -12,15 +12,15 @@ in {
     inputs.niri.homeModules.config
     inputs.niri.homeModules.stylix
 
-    # ./dunst.nix
+    ./dunst.nix
     ./fuzzel.nix
     ./hyprlock.nix
     # ./mako.nix
     ./polkit.nix
-    ./shell-yeah.nix
-    # ./swaybg.nix
+    # ./shell-yeah.nix
+    ./swaybg.nix
     ./swayosd.nix
-    # ./waybar.nix
+    ./waybar.nix
   ];
 
   home.packages = with pkgs; [xwayland-satellite];

@@ -1,5 +1,5 @@
 {
-  config,
+  lib,
   pkgs,
   ...
 }: {
@@ -10,7 +10,7 @@
       BindsTo = ["graphical-session.target"];
     };
     Service = {
-      ExecStart = "${pkgs.swaybg}/bin/swaybg --image ${config.stylix.image}";
+      ExecStart = "${lib.getExe pkgs.swaybg} --image ${../../../../../wallpaper/forest.jpg}";
       Restart = "on-failure";
     };
     Install = {
