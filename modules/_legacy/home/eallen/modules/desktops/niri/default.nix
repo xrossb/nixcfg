@@ -257,6 +257,11 @@ in {
           action = spawn "swayosd-client" "--brightness" "lower";
         };
 
+        "Mod+B" = {
+          repeat = false;
+          action = spawn "pkill" "-SIGUSR1" "waybar";
+        };
+
         "Mod+O" = {
           repeat = false;
           action = toggle-overview;

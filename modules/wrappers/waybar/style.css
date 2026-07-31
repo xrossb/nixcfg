@@ -41,7 +41,7 @@ window#waybar {
 }
 
 #workspaces {
-  padding: 0
+  padding: 0;
 }
 
 #workspaces:hover {
@@ -56,6 +56,10 @@ window#waybar {
 
 #workspaces button.empty label {
   opacity: 0.3;
+}
+
+#workspaces button.active label {
+  opacity: 1;
 }
 
 #workspaces button:hover {
