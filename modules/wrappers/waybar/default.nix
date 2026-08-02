@@ -8,8 +8,41 @@
     wlib,
     ...
   }: let
-    run-sh = command: "${lib.getExe pkgs.alacritty} -e ${lib.strings.escapeShellArg command}";
-    icon = glyph: "<span size='larger' weight='bold' rise='-4500'>&#x${glyph};</span>";
+    glyphs = {
+      batteryEmpty = "&#xf306;";
+      battery1 = "&#xf30d;";
+      battery2 = "&#xf30c;";
+      battery3 = "&#xf30b;";
+      battery4 = "&#xf30a;";
+      battery5 = "&#xf309;";
+      battery6 = "&#xf308;";
+      battery7 = "&#xf307;";
+      batteryFull = "&#xf304;";
+      plugged = "&#xf102;";
+      bolt = "&#xec1c;";
+
+      btOn = "&#xe1a7;";
+      btOff = "&#xe1a9;";
+      btConnected = "&#xe1a8;";
+
+      lan = "&#xeb2f;";
+      wifi1 = "&#xe4ca;";
+      wifi2 = "&#xe4d9;";
+      wifi3 = "&#xe63e;";
+      wifiOff = "&#xe648;";
+
+      speakerOff = "&#xe04f;";
+      speakerMute = "&#xe04e;";
+      speakerLow = "&#xe04d;";
+      speakerHigh = "&#xe050;";
+
+      magnifyingGlass = "&#xe8b6;";
+
+      powerOff = "&#xe8ac;";
+    };
+
+    openTerminal = command: "${lib.getExe pkgs.alacritty} -e ${lib.strings.escapeShellArg command}";
+    formatIcon = text: "<span size='larger' weight='bold' rise='-4500'>${text}</span>";
   in {
     imports = [
       wlib.wrapperModules.waybar
@@ -45,20 +78,20 @@
       battery = let
         format-capacity = "<b><small><span size='5500'> </span>{capacity}%</small></b>";
       in rec {
-        format = "${icon "{icon}"}${format-capacity}";
-        format-icons = [
-          "f306"
-          "f30d"
-          "f30c"
-          "f30b"
-          "f30a"
-          "f309"
-          "f308"
-          "f307"
-          "f304"
+        format = "${formatIcon "{icon}"}${format-capacity}";
+        format-icons = with glyphs; [
+          batteryEmpty
+          battery1
+          battery2
+          battery3
+          battery4
+          battery5
+          battery6
+          battery7
+          batteryFull
         ];
-        format-plugged = "${icon "f102"}${format-capacity}";
-        format-charging = "${icon "ec1c"}${format-capacity}";
+        format-plugged = "${formatIcon glyphs.plugged}${format-capacity}";
+        format-charging = "${formatIcon glyphs.bolt}${format-capacity}";
         format-full = format-plugged;
         format-time = "{H}h {M}m";
         tooltip-format =
@@ -73,10 +106,10 @@
       };
 
       bluetooth = rec {
-        format-disabled = icon "e1a9";
+        format-disabled = formatIcon glyphs.btOff;
         format-off = format-disabled;
-        format-on = icon "e1a7";
-        format-connected = icon "e1a8";
+        format-on = formatIcon glyphs.btOn;
+        format-connected = formatIcon glyphs.btConnected;
         tooltip-format =
           "<tt>"
           + lib.concatStringsSep "\n" [
@@ -94,7 +127,7 @@
           + "</tt>";
         tooltip-format-enumerate-connected = "{device_alias} {device_address}";
         tooltip-format-enumerate-connected-battery = "{device_alias} {device_address} ({device_battery_percentage}%)";
-        on-click = run-sh (lib.getExe pkgs.bluetuith);
+        on-click = openTerminal (lib.getExe pkgs.bluetuith);
       };
 
       clock = {
@@ -112,15 +145,15 @@
         ];
         format-bandwidth = "up: {bandwidthUpBits}, down: {bandwidthDownBits}";
       in {
-        format-ethernet = icon "eb2f";
-        format-wifi = icon "{icon}";
-        format-linked = icon "{icon}";
-        format-disconnected = icon "e63e";
-        format-disabled = icon "e648";
-        format-icons = [
-          "e4ca"
-          "e4d9"
-          "e63e"
+        format-ethernet = formatIcon glyphs.lan;
+        format-wifi = formatIcon "{icon}";
+        format-linked = formatIcon "{icon}";
+        format-disconnected = formatIcon glyphs.wifi3;
+        format-disabled = formatIcon glyphs.wifiOff;
+        format-icons = with glyphs; [
+          wifi1
+          wifi2
+          wifi3
         ];
         tooltip-format-ethernet =
           "<tt>"
@@ -142,7 +175,7 @@
             format-bandwidth
           ]
           + "</tt>";
-        on-click = run-sh (lib.getExe' pkgs.networkmanager "nmtui");
+        on-click = openTerminal (lib.getExe' pkgs.networkmanager "nmtui");
       };
 
       "niri/workspaces" = {
@@ -157,12 +190,12 @@
       };
 
       wireplumber = {
-        format = icon "{icon}";
-        format-muted = icon "e04f";
-        format-icons = [
-          "e04e"
-          "e04d"
-          "e050"
+        format = formatIcon "{icon}";
+        format-muted = formatIcon glyphs.speakerOff;
+        format-icons = with glyphs; [
+          speakerMute
+          speakerLow
+          speakerHigh
         ];
         tooltip-format = lib.concatStringsSep "\n" [
           "sink: {node_name}"
@@ -172,13 +205,13 @@
       };
 
       "custom/launcher" = {
-        format = icon "e8b6";
+        format = formatIcon glyphs.magnifyingGlass;
         tooltip-format = "Open launcher";
         on-click = "fuzzel";
       };
 
       "custom/power" = {
-        format = icon "e8ac";
+        format = formatIcon glyphs.powerOff;
         tooltip-format = "Power options";
         menu = "on-click";
         menu-file = ./power-menu.xml;
