@@ -30,13 +30,7 @@
   "hide-on-action": true,
   "text-empty": "No Notifications",
   "script-fail-notify": true,
-  "widgets": [
-    "mpris",
-    "inhibitors",
-    "title",
-    "dnd",
-    "notifications"
-  ],
+  "widgets": ["mpris", "inhibitors", "title", "dnd", "notifications"],
   "widget-config": {
     "notifications": {
       "vexpand": false

@@ -134,6 +134,7 @@
         format = "<b>{:%a, %d %b · %I:%M %p}</b>";
         tooltip-format = "<tt>{calendar}</tt>";
         calendar.format.today = "<span color='#000' background='#fff'>{}</span>";
+        on-click = "${lib.getExe' pkgs.swaynotificationcenter "swaync-client"} --toggle-panel";
       };
 
       network = let
