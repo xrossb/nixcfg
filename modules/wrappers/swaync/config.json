@@ -1,4 +1,5 @@
 {
+  "$schema": "https://raw.githubusercontent.com/ErikReider/SwayNotificationCenter/refs/heads/main/src/configSchema.json",
   "positionX": "center",
   "positionY": "top",
   "cssPriority": "user",
@@ -30,7 +31,13 @@
   "hide-on-action": true,
   "text-empty": "No Notifications",
   "script-fail-notify": true,
-  "widgets": ["mpris", "inhibitors", "title", "dnd", "notifications"],
+  "widgets": [
+    "mpris",
+    "inhibitors",
+    "title",
+    "dnd",
+    "notifications"
+  ],
   "widget-config": {
     "notifications": {
       "vexpand": false

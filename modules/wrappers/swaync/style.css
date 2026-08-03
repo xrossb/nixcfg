@@ -1,16 +1,17 @@
 :root {
-  --border-radius: 16px;
-  --padding: calc(var(--border-radius) / 2);
+  --cc-bg: #131721;
+  --noti-bg: #0b0e14;
 }
 
 .control-center {
-  background: transparent;
-  border-radius: 0;
-  padding: 0;
+  background: var(--cc-bg);
 }
 
-.widget {
-  background: #434343;
-  border-radius: var(--border-radius);
-  padding: var(--padding);
+.notification {
+  background: var(--noti-bg);
+  border-radius: 8px;
+}
+
+.notification-background {
+  padding: 0;
 }
