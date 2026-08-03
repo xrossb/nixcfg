@@ -10,7 +10,7 @@
       BindsTo = ["graphical-session.target"];
     };
     Service = {
-      ExecStart = "${lib.getExe pkgs.swaybg} --image ${../../../../../wallpaper/forest.jpg}";
+      ExecStart = "${lib.getExe pkgs.swaybg} --mode fill --image ${../../../../../wallpaper/forest.jpg}";
       Restart = "on-failure";
     };
     Install = {
