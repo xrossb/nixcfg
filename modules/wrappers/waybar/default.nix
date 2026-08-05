@@ -186,6 +186,10 @@
         };
       };
 
+      privacy = {
+        icon-size = 16;
+      };
+
       tray = {
         reverse-direction = true;
       };

@@ -24,6 +24,14 @@ window#waybar {
   opacity: 0.5;
 }
 
+#privacy {
+  margin: 4px;
+  padding: 4px;
+  background-color: #ff8f40;
+  color: #0b0e14;
+  border-radius: 4px;
+}
+
 #tray {
   padding: 0;
 }
