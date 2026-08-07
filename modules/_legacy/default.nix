@@ -1,6 +1,7 @@
 {
   inputs,
   withSystem,
+  self,
   ...
 }: let
   lib = inputs.nixpkgs.lib;
@@ -21,15 +22,24 @@
 in {
   flake.nixosConfigurations = {
     nixps = nixosSystem "x86_64-linux" {
-      modules = [./hosts/nixps];
+      modules = [
+        self.nixosModules.wrappers
+        ./hosts/nixps
+      ];
     };
 
     ea-desktop25 = nixosSystem "x86_64-linux" {
-      modules = [./hosts/ea-desktop25];
+      modules = [
+        self.nixosModules.wrappers
+        ./hosts/ea-desktop25
+      ];
     };
 
     ea-pocket = nixosSystem "x86_64-linux" {
-      modules = [./hosts/ea-pocket];
+      modules = [
+        self.nixosModules.wrappers
+        ./hosts/ea-pocket
+      ];
     };
   };
 }

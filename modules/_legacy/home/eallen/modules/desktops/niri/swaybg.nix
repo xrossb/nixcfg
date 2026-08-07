@@ -1,6 +1,6 @@
 {
   lib,
-  self',
+  pkgs,
   ...
 }: {
   systemd.user.services.swaybg = {
@@ -10,7 +10,7 @@
       BindsTo = ["graphical-session.target"];
     };
     Service = {
-      ExecStart = lib.getExe self'.packages.swaybg;
+      ExecStart = lib.getExe pkgs.swaybg;
       Restart = "on-failure";
     };
     Install = {

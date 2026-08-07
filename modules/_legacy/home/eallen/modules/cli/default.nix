@@ -1,8 +1,4 @@
-{
-  pkgs,
-  self',
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ./bat.nix
     ./comma.nix
@@ -36,14 +32,13 @@
   };
 
   home.packages = with pkgs; [
-    self'.packages.tmux
-
     bluetuith
     brightnessctl
     btop
     lf
     nix-tree
     ripgrep
+    tmux
     tree
     wget
   ];

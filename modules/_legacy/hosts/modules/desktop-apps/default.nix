@@ -1,8 +1,4 @@
-{
-  pkgs,
-  self',
-  ...
-}: {
+{pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     gnome-disk-utility
     nautilus
@@ -11,7 +7,7 @@
 
     gamescope
 
-    self'.packages.vscodium
+    vscodium
   ];
 
   programs.appimage = {

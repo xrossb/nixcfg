@@ -1,7 +1,6 @@
 {
   inputs,
   pkgs,
-  self',
   ...
 }: {
   imports = [
@@ -34,7 +33,7 @@
         package = pkgs.adwaita-fonts;
       };
       emoji = {
-        package = self'.packages.apple-color-emoji;
+        package = pkgs.apple-color-emoji;
         name = "Apple Color Emoji";
       };
     };
