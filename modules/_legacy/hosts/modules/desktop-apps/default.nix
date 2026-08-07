@@ -4,9 +4,6 @@
   ...
 }: {
   environment.systemPackages = with pkgs; [
-    adwaita-icon-theme
-    gnome-icon-theme
-
     gnome-disk-utility
     nautilus
 
