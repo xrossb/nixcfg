@@ -1,5 +1,5 @@
 {...}: {
-  flake.wrappers.swaync = {
+  flake.wrappers.swaynotificationcenter = {
     pkgs,
     wlib,
     ...
