@@ -1,6 +1,6 @@
 {
   lib,
-  pkgs,
+  self',
   ...
 }: {
   systemd.user.services.swaybg = {
@@ -10,7 +10,7 @@
       BindsTo = ["graphical-session.target"];
     };
     Service = {
-      ExecStart = "${lib.getExe pkgs.swaybg} --mode fill --image ${../../../../../wallpaper/forest.jpg}";
+      ExecStart = lib.getExe self'.packages.swaybg;
       Restart = "on-failure";
     };
     Install = {
