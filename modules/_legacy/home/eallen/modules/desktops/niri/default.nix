@@ -7,6 +7,7 @@
 }: let
   colors = config.lib.stylix.colors.withHashtag;
   playerctl = lib.getExe pkgs.playerctl;
+  swaync-client = lib.getExe' pkgs.swaynotificationcenter "swaync-client";
 in {
   imports = [
     inputs.niri.homeModules.config
@@ -224,6 +225,7 @@ in {
         "Mod+Shift+Slash".action = show-hotkey-overlay;
 
         "Mod+E".action = spawn "nautilus";
+        "Mod+N".action = spawn swaync-client "--toggle-panel";
         "Mod+T".action = spawn "alacritty";
         "Mod+Space".action = spawn "fuzzel";
         "Super+Alt+L".action = spawn-sh "hyprlock & niri msg action power-off-monitors";
