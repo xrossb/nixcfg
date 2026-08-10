@@ -1,0 +1,142 @@
+.floating-notifications animatedlistitem {
+  margin-top: 8px;
+}
+
+.notification-row:not(:last-child) {
+  margin-top: 8px;
+}
+
+.notification-background {
+  padding: 0;
+}
+
+.notification:not(:first-child) {
+  margin-top: 8px;
+}
+
+.notification-default-action {
+  padding: 8px;
+}
+
+.notification-content {
+}
+
+.notification .image {
+  margin: 0;
+  margin-right: 8px;
+  border-radius: 8px;
+  -gtk-icon-size: 36px;
+}
+
+.notification .app-icon {
+}
+
+.notification .summary {
+}
+
+.notification .time {
+  font-size: 0.8rem;
+  font-weight: normal;
+  text-transform: lowercase;
+  opacity: 0.5;
+  margin: 0;
+}
+
+.notification .body {
+}
+
+.notification .body-image {
+}
+
+.notification-action {
+}
+
+.close-button {
+  margin: 8px;
+}
+
+.notification-group:not(:first-child) {
+  margin-top: 8px;
+}
+
+.notification-group-headers {
+  margin: 0;
+  margin-bottom: 8px;
+}
+
+.notification-group-header.title-1 {
+  font-size: 1rem;
+}
+
+.notification-group-buttons {
+  margin: 0;
+  margin-bottom: 8px;
+}
+
+.notification-group-icon {
+  -gtk-icon-size: 24px;
+}
+
+.notification-group-close-button {
+}
+
+.control-center {
+  padding: 8px;
+  margin: 8px;
+}
+
+.control-center-list-placeholder {
+}
+
+.control-center-list {
+}
+
+.widget {
+  margin: 0;
+  padding: 0;
+}
+
+.widget:not(:first-child) {
+  margin-top: 8px;
+}
+
+.widget-title > label {
+}
+
+.widget-title > button {
+}
+
+.widget-dnd label {
+}
+
+.widget-dnd switch {
+}
+
+.widget-dnd switch slider {
+}
+
+.widget-label > label {
+}
+
+.widget-mpris {
+}
+
+.widget-mpris-player {
+  margin: 0;
+  box-shadow: none;
+}
+
+.mpris-background {
+}
+
+.mpris-overlay {
+}
+
+.widget-mpris-album-art {
+}
+
+.widget-mpris-title {
+}
+
+.widget-mpris-subtitle {
+}
