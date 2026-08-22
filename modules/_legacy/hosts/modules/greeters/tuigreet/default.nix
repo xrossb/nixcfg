@@ -8,7 +8,8 @@
     settings = {
       default_session = {
         command = lib.concatStringsSep " " [
-          "${pkgs.tuigreet}/bin/tuigreet"
+          (lib.getExe pkgs.tuigreet)
+          "--cmd=${lib.getExe' pkgs.niri "niri-session"}"
           "--time"
           "--asterisks"
           "--user-menu"
