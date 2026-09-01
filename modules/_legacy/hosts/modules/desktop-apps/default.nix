@@ -44,11 +44,11 @@
   programs.firefox = {
     enable = true;
     policies = {
-      "SearchEngines" = {
-        "Default" = "DuckDuckGo";
+      SearchEngines = {
+        Default = "DuckDuckGo";
       };
-      "Homepage" = {
-        "StartPage" = "previous-session";
+      Homepage = {
+        StartPage = "previous-session";
       };
     };
   };
