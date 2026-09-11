@@ -7,7 +7,6 @@
     ghostty.enable = false;
     helix.enable = false;
     hyprlock.enable = false;
-    niri.enable = false;
     starship.enable = false;
     waybar.enable = false;
   };

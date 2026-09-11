@@ -23,7 +23,4 @@
     commit.gpgsign = true;
     tag.gpgSign = true;
   };
-
-  programs.niri.settings.outputs.DSI-1.scale = 1.5;
-  programs.niri.settings.input.touchpad.tap = lib.mkForce false;
 }
