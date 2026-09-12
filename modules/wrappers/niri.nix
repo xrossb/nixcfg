@@ -10,7 +10,7 @@
     urgent = "#ff8f40";
     recording = "#f07178";
 
-    file-browser = lib.getExe pkgs.nautilus;
+    file-manager = lib.getExe pkgs.nautilus;
     terminal = lib.getExe pkgs.alacritty;
     launcher = lib.getExe pkgs.fuzzel;
     lock-screen = lib.getExe pkgs.hyprlock;
@@ -208,11 +208,26 @@
       binds = {
         "Mod+Shift+Slash".show-hotkey-overlay = yep;
 
-        "Mod+E".spawn = file-browser;
-        "Mod+N".spawn = [swaync-client "--toggle-panel"];
-        "Mod+T".spawn = terminal;
-        "Mod+Space".spawn = launcher;
-        "Super+Alt+L".spawn-sh = "${lock-screen} & niri msg action power-off-monitors";
+        "Mod+E" = _: {
+          props.hotkey-overlay-title = "Open file manager";
+          content.spawn = file-manager;
+        };
+        "Mod+N" = _: {
+          props.hotkey-overlay-title = "Toggle notifications";
+          content.spawn = [swaync-client "--toggle-panel"];
+        };
+        "Mod+T" = _: {
+          props.hotkey-overlay-title = "Open terminal";
+          content.spawn = terminal;
+        };
+        "Mod+Space" = _: {
+          props.hotkey-overlay-title = "Open launcher";
+          content.spawn = launcher;
+        };
+        "Super+Alt+L" = _: {
+          props.hotkey-overlay-title = "Lock screen";
+          content.spawn-sh = "${lock-screen} & niri msg action power-off-monitors";
+        };
 
         XF86AudioPrev.spawn = [playerctl "previous"];
         XF86AudioPlay.spawn = [playerctl "play-pause"];
@@ -246,7 +261,7 @@
 
         "Mod+B" = _: {
           props.repeat = false;
-          props.hotkey-overlay-title = "Toggle Waybar";
+          props.hotkey-overlay-title = "Toggle bar";
           content.spawn = ["pkill" "-SIGUSR1" "waybar"];
         };
 
