@@ -35,11 +35,13 @@
     bluetuith
     brightnessctl
     btop
+    jq
     lf
     nix-tree
     ripgrep
     tmux
     tree
     wget
+    yq
   ];
 }
