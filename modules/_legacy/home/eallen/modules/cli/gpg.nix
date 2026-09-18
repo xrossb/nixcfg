@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    gcr # Required for pinentry.
+    gcr_4 # Required for pinentry.
     gnupg
   ];
 
