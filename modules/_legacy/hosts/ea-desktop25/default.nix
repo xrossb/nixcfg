@@ -31,6 +31,7 @@
     ../modules/stylix
     ../modules/tailscale
     ../modules/wireless
+    ../modules/winton
   ];
 
   networking.hostName = "ea-desktop25";

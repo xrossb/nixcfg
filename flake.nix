@@ -36,6 +36,10 @@
       url = "github:xrossb/shell-yeah";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    winton = {
+      url = "github:xrossb/winton";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     wrappers = {
       url = "github:BirdeeHub/nix-wrapper-modules";
       inputs.nixpkgs.follows = "nixpkgs";
