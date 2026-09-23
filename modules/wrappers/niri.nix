@@ -139,6 +139,17 @@
           };
         }
         {
+          matches = [{app-id = "qemu-pebble";}];
+          open-floating = true;
+          default-floating-position = _: {
+            props = {
+              x = 8;
+              y = 8;
+              relative-to = "top-right";
+            };
+          };
+        }
+        {
           matches = [
             {
               app-id = "steam";
