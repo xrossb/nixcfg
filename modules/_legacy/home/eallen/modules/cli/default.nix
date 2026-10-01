@@ -37,6 +37,7 @@
     btop
     jq
     lf
+    nvd
     nix-tree
     ripgrep
     tmux
