@@ -31,7 +31,7 @@
           libxcrypt-legacy
           libxml2
           libxslt
-          openssl_3
+          openssl
           pkg-config
           zstd
         ];
