@@ -12,7 +12,7 @@
           (lib.getExe pkgs.tuigreet)
           "--time"
           "--asterisks"
-          # "--user-menu" # TODO: enable when compatible w/ --remember again.
+          "--user-menu"
           "--user-menu-min-uid=1000"
           "--user-menu-max-uid=29999" # ignore nixbld users.
           "--remember"
