@@ -241,11 +241,11 @@
 
         XF86AudioRaiseVolume = _: {
           props.allow-when-locked = true;
-          content.spawn = [swayosd-client "--output-volume" "raise"];
+          content.spawn = [swayosd-client "--output-volume" "+2"];
         };
         XF86AudioLowerVolume = _: {
           props.allow-when-locked = true;
-          content.spawn = [swayosd-client "--output-volume" "lower"];
+          content.spawn = [swayosd-client "--output-volume" "-2"];
         };
         XF86AudioMute = _: {
           props.allow-when-locked = true;
