@@ -23,6 +23,9 @@
       # html, css, json, eslint
       vscode-langservers-extracted
 
+      # c
+      clang-tools
+
       # go
       delve
       gopls
