@@ -25,8 +25,8 @@
       gs = "git status";
       gsw = "git switch";
 
-      ns = "sudo nixos-rebuild switch";
-      nt = "sudo nixos-rebuild test";
+      ns = "nixos-rebuild --sudo switch";
+      nt = "nixos-rebuild --sudo test";
       gc = "sudo nix-collect-garbage -d";
     };
   };
