@@ -36,6 +36,10 @@
       url = "github:xrossb/shell-yeah";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    tuigreet = {
+      url = "github:tuigreet/tuigreet";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     winton = {
       url = "github:xrossb/winton";
       inputs.nixpkgs.follows = "nixpkgs";

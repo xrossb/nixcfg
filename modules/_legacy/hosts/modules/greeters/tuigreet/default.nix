@@ -1,15 +1,19 @@
 {
+  inputs,
   lib,
   pkgs,
   ...
-}: {
+}: let
+  system = pkgs.stdenv.hostPlatform.system;
+  tuigreet = inputs.tuigreet.packages.${system}.default;
+in {
   services.greetd = {
     enable = true;
     useTextGreeter = true;
     settings = {
       default_session = {
         command = lib.concatStringsSep " " [
-          (lib.getExe pkgs.tuigreet)
+          (lib.getExe tuigreet)
           "--time"
           "--asterisks"
           "--user-menu"
