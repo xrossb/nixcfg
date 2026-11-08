@@ -32,10 +32,6 @@
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    shell-yeah = {
-      url = "github:xrossb/shell-yeah";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     tuigreet = {
       url = "github:tuigreet/tuigreet";
       inputs.nixpkgs.follows = "nixpkgs";
