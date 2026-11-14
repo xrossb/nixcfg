@@ -1,12 +1,15 @@
 {...}: {
-  flake.wrappers.vscodium = {
+  flake.wrappers.vscode = {
     pkgs,
     wlib,
     ...
   }: {
     imports = [wlib.modules.default];
-    package = pkgs.vscodium;
+    package = pkgs.vscode-fhs;
     runtimePkgs = with pkgs; [
+      # c
+      clang-tools
+
       # go
       delve
       impl
@@ -23,6 +26,10 @@
       # rust
       rust-analyzer
       rustfmt
+
+      # toml
+      taplo
+      tombi
     ];
   };
 }

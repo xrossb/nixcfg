@@ -7,7 +7,7 @@
 
     gamescope
 
-    vscodium
+    vscode
   ];
 
   programs.appimage = {
