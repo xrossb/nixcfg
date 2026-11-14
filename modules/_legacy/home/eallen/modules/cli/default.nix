@@ -24,10 +24,6 @@
       gds = "git diff --staged";
       gs = "git status";
       gsw = "git switch";
-
-      ns = "nixos-rebuild --sudo switch";
-      nt = "nixos-rebuild --sudo test";
-      gc = "sudo nix-collect-garbage -d";
     };
   };
 
